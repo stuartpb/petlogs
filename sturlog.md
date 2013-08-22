@@ -1,36 +1,36 @@
-= Manual changes made to this installation =
+# Manual changes made to this installation
 
 (This doesn't list installed packages: you can use "pacman -Qq" for that.)
 (Also not listing global npm/luarocks packages, for the same reasons)
 
-== During install ==
+## During install
 
 - hostname changed to sturling in rc.conf
   - something else added it after "localhost" in /etc/hosts, I don't know what when or how, but I didn't do it myself. Which is nice.
 - uncommented en_US.UTF-8 line in /etc/locale.gen (that was stupid)
 - /vfat added to /etc/fstab
-  - /vfat options in /etc/fstab were changed from "defaults" to "umask=000" (to allow all users full access)
+  - /vfat options in /etc/fstab were changed from `defaults` to `umask=000` (to allow all users full access)
   - (the options tweak was actually done after the first boot but it could have been done in the install phase)
 
-== Post install, pre-boot ==
+## Post install, pre-boot
 
 - right after installing, GRUB was replaced with GRUB2
   - see the wiki - this is now the default
-- "usb" added to hooks in /etc/mkinitcpio.conf right before "filesystem"
-  - "autodetect" removed (so all possible root devices are present in the initrd, even though realistically they don't have to be)
-  - I didn't realize usb was necessary until the system failed to boot: I had to follow the chroot instructions from the GRUB2 install and then run "mkinitcpio -p linux"
+- `usb` added to hooks in /etc/mkinitcpio.conf right before `filesystem`
+  - `autodetect` removed (so all possible root devices are present in the initrd, even though realistically they don't have to be)
+  - I didn't realize usb was necessary until the system failed to boot: I had to follow the chroot instructions from the GRUB2 install and then run `mkinitcpio -p linux`
   - autodetect wasn't removed until much later, just for kicks
   - usbinput and fsck are there too after filesystem, not sure if I did that
-  - 2/14/2013: replaced "usb pata scsi sata" with "block", replaced "usbinput" with "keyboard"
+  - 2/14/2013: replaced `usb pata scsi sata` with `block`, replaced `usbinput` with `keyboard`
 
 == After booting ==
 
-- "stuart" user made with adduser (NOT useradd)
-- "%wheel ALL=(ALL) ALL" line uncommented with "EDITOR=nano visudo"
-- "usermod stuart -aG wheel" (could really have been done during user creation if I'd been thinking)
+- "stuart" user made with `adduser` (NOT `useradd`)
+- `%wheel ALL=(ALL) ALL` line uncommented with `EDITOR=nano visudo`
+- `usermod stuart -aG wheel` (could really have been done during user creation if I'd been thinking)
   - likewise: power, audio, video, optical, network, games, kvm
-  - I used "usermod -G" the first time, when I should have used "usermod -aG" (add, not clobber)
-  - but moreso should have used "gpasswd -a stuart wheel"
+  - I used `usermod -G` the first time, when I should have used `usermod -aG` (add, not clobber)
+  - but moreso should have used `gpasswd -a stuart wheel`
 
 - wlan0-Mussroom network configuration added in /etc/network.d/ (based on /etc/network.d/examples/wireless-wpa)
 
@@ -39,7 +39,7 @@
     - other enabled services: ntpd
     - net-auto-wireless and net-auto-wired were enabled until I replaced them with NetworkManager
   - /etc/hostname, /etc/timezone, /etc/locale.conf added
-  - "LANG=en-US.utf8" added to /etc/environment
+  - `LANG=en-US.utf8` added to /etc/environment
 
 - manually adding a non-graphical entry to /boot/grub/grub.cfg every time it gets regenerated (whatever the syntax is to set multiuser.target)
 
@@ -48,11 +48,11 @@
 
 - moved ~/.bashrc to ~/.profile and changed ~/.bashrc to '. $HOME/.profile'
 - changes to ~/.profile:
-  - alias ls="ls --color=auto" complicated into three lines with LS_OPTIONS="--color=auto"
+  - `alias ls="ls --color=auto"` complicated into three lines with `LS_OPTIONS="--color=auto"`
   - added ~/bin to front of $PATH and exported it
   - created ~/.bash_functions and sourced it (from .profile)
 
-- created ~/.inputrc to set show-all-if-unmodified and completion-ignore-case on
+- created ~/.inputrc to set `show-all-if-unmodified` and `completion-ignore-case` on
 
 - commented line disabling magic sysrq in /etc/sysctl.conf
 
@@ -61,10 +61,10 @@
 
 - added wins to /etc/nsswitch.conf's "hosts = " line
 
-- /etc/systemd/logind.conf: LidSwitchIgnoreInhibited=no
-  - HandleLidSwitch=ignore, because not ignoring the inhibition apparently wasn't enough
+- /etc/systemd/logind.conf: `LidSwitchIgnoreInhibited=no`
+  - `HandleLidSwitch=ignore`, because not ignoring the inhibition apparently wasn't enough
 
-== Stuff that should be upstream ==
+## Stuff that should be upstream
 
 - Tecgraf lua libraries linked with http://www.tecgraf.puc-rio.br/iup/download/config_lua_module
   - cdlua51 was fixed manually
@@ -74,7 +74,7 @@
 -  /usr/share/applications/transmission-qt.desktop Exec line patched manually (%F -> %U) to fix magnet link opening, rather than waiting for the packager to fix it
   - see https://bugs.archlinux.org/task/29909?opened=12873&status%5B0%5D= for upstream status
 
-== In the X desktop environment ==
+## In the X desktop environment
 
 - Tweaks to preferences in Transmission
 
@@ -101,13 +101,14 @@
 
 - added heartbeat deactivation of xscreensaver to ~/.mplayer/config
 
-== Task-oriented tweaks ==
+## Task-oriented tweaks
 
 - Added lines from https://www.googlesource.com/new-password?state=android to ~/.netrc
 
-== Historical tweaks ==
+## Historical tweaks
 
-=== Obsoleted by systemd ===
+### Obsoleted by systemd
+
 - dbus added to daemons array in /etc/rc.conf (why was it not there already? come on, arch linux)
   - ifplugd installed and added to array
 
@@ -116,7 +117,7 @@
 - copied /etc/grub.d/10_linux to 15_linux_xrl, modified it to generate listings with the arg added to start at runlevel 5
   - (which was then moved to /vfat when installing systemd, so nobody gets confused)
 
-=== Obsoleted by netcfg -> NetworkManager ===
+### Obsoleted by netcfg -> NetworkManager
 - original /etc/wpa_supplicant.conf moved to /etc/wpa_supplicant.conf.original
 - WPA passphrase echoed into new wpa_supplicant.conf
 
