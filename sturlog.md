@@ -23,7 +23,7 @@
   - usbinput and fsck are there too after filesystem, not sure if I did that
   - 2/14/2013: replaced `usb pata scsi sata` with `block`, replaced `usbinput` with `keyboard`
 
-== After booting ==
+## After booting
 
 - "stuart" user made with `adduser` (NOT `useradd`)
 - `%wheel ALL=(ALL) ALL` line uncommented with `EDITOR=nano visudo`
@@ -78,11 +78,16 @@
 
 - added shortcuts for "amixer set Master <10%+, 10%-, toggle>" in Xfce's Keyboard Shortcuts configuration
 
-- compiz... started? not sure if enabled. (compositing disabled in XFCE's default WM, because Compiz doesn't go otherwise)
+- compiz... started? not sure if enabled.
   - emerald theme changed to, what, beryl yellow or something. I like it.
   - whole bunch of compiz modules enabled:
     - all the render plugins
     - Static Application Switcher
+
+### XFCE
+
+- Enabled compositing for xfwm, then disabled it because Compiz couldn't overtake it when compositing was enabled (some error)
+
 - ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml edited to have this (enabling Compiz):
     <property name="Client0_Command" type="array">
         <value type="string" value="fusion-icon"/>
@@ -91,6 +96,8 @@
 
 - fun XFCE panel layout with apps at the top and widgets at the bottom
   - made the apps unsorted and draggable
+
+### XScreensaver
 
 - Xscreensaver installed, lots of screensavers disabled, lots more tweaked
 
