@@ -1,4 +1,4 @@
-# Manual changes made to this installation
+# sturling local changes
 
 (This doesn't list installed packages: you can use "pacman -Qq" for that.)
 (Also not listing global npm/luarocks packages, for the same reasons)
@@ -96,6 +96,11 @@
 
 - fun XFCE panel layout with apps at the top and widgets at the bottom
   - made the apps unsorted and draggable
+
+### LXDE
+
+- `~/.config/lxsession/LXDE/desktop.conf`: `window_manager=openbox-lxde` changed to `window_manager=compiz ccp --indirect-rendering`
+  - see https://wiki.archlinux.org/index.php/LXDE#Replacing_window_managers
 
 ### XScreensaver
 
