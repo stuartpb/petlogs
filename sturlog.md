@@ -71,8 +71,6 @@
 - /usr/share/xsessions/Notion
   - I thought I did it as /etc/X11/sessions/notion.desktop but that doesn't appear to exist
    - /etc/X11/Sessions/notion seems like it would be closer to normal
--  /usr/share/applications/transmission-qt.desktop Exec line patched manually (%F -> %U) to fix magnet link opening, rather than waiting for the packager to fix it
-  - see https://bugs.archlinux.org/task/29909?opened=12873&status%5B0%5D= for upstream status
 
 ## In the X desktop environment
 
@@ -96,12 +94,14 @@
 
 - Xscreensaver installed, lots of screensavers disabled, lots more tweaked
 
-- chmod u+s /usr/lib/xscreensaver/sonar #(so ping works)
+- `chmod u+s /usr/lib/xscreensaver/sonar` (so ping works)
   - it still doesn't work but I no longer care (I disabled xscreensaver anyway)
 
 - added heartbeat deactivation of xscreensaver to ~/.mplayer/config
 
 ## Task-oriented tweaks
+
+### To download the Android source code
 
 - Added lines from https://www.googlesource.com/new-password?state=android to ~/.netrc
 
@@ -118,8 +118,13 @@
   - (which was then moved to /vfat when installing systemd, so nobody gets confused)
 
 ### Obsoleted by netcfg -> NetworkManager
+
 - original /etc/wpa_supplicant.conf moved to /etc/wpa_supplicant.conf.original
 - WPA passphrase echoed into new wpa_supplicant.conf
 
+### Upstream fixes
+
+-  /usr/share/applications/transmission-qt.desktop Exec line patched manually (%F -> %U) to fix magnet link opening
+  - see https://bugs.archlinux.org/task/29909?opened=12873&status%5B0%5D= for upstream status
 
 
