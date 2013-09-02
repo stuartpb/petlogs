@@ -90,10 +90,10 @@
 - Enabled compositing for xfwm, then disabled it because Compiz couldn't overtake it when compositing was enabled (some error)
 
 - ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml edited to have this (enabling Compiz):
-    <property name="Client0_Command" type="array">
-        <value type="string" value="fusion-icon"/>
-        <value type="string" value="--force-compiz"/>
-    </property>
+      <property name="Client0_Command" type="array">
+          <value type="string" value="fusion-icon"/>
+          <value type="string" value="--force-compiz"/>
+      </property>
 
 - fun XFCE panel layout with apps at the top and widgets at the bottom
   - made the apps unsorted and draggable
