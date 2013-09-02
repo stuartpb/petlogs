@@ -25,7 +25,8 @@
 
 ## After booting
 
-- "stuart" user made with `adduser` (NOT `useradd`)
+- "stuart" user made with `adduser`
+  - NOTE: The `adduser` script [has been removed from Arch Linux](https://bugs.archlinux.org/task/32893): https://wiki.archlinux.org/index.php/Users_and_Groups#User_management describes how to add new users with `useradd`.
 - `%wheel ALL=(ALL) ALL` line uncommented with `EDITOR=nano visudo`
 - `usermod stuart -aG wheel` (could really have been done during user creation if I'd been thinking)
   - likewise: power, audio, video, optical, network, games, kvm
