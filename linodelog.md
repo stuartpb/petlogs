@@ -14,4 +14,3 @@ EVERYTHING from when I started the system image!
 - Sudo was already installed (probably a Linode thing, that), so I just had to uncomment the wheel line in visudo
 - replaced root's password in /etc/shadow with !
 - installed node, mongodb, redis
-- 
