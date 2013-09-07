@@ -16,4 +16,4 @@
 - install bash-completion
 - `sudo cp /usr/share/turnserver/examples/etc/turnserver.conf /etc/`
 - `sudo cp /usr/share/turnserver/examples/etc/turnuserdb.conf /etc/`
-
+- add user line to /etc/turnserver.conf
