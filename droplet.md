@@ -4,8 +4,10 @@
 - `EDITOR=nano visudo`, uncomment `%wheel ALL=(ALL) ALL`
 - log in as stuart
 - append ssh public keys to ~/.ssh/authorized_keys
-- `bash <(culr aur.sh)` packer
+- `bash <(curl aur.sh)` packer
 - remove netcfg
+ 
+## TURN server
 - create and mount 4GB swapfile for building
 - build and install rethinkdb
 - install redis
