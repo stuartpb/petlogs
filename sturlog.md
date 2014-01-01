@@ -5,8 +5,6 @@
 
 ## During install
 
-- hostname changed to sturling in rc.conf
-  - something else added it after "localhost" in /etc/hosts, I don't know what when or how, but I didn't do it myself. Which is nice.
 - uncommented en_US.UTF-8 line in /etc/locale.gen (that was stupid)
 - /vfat added to /etc/fstab
   - /vfat options in /etc/fstab were changed from `defaults` to `umask=000` (to allow all users full access)
@@ -133,6 +131,10 @@
 - commented line disabling magic sysrq in /etc/sysctl.conf
   - obsoleted by systemd updates: by systemd 207, /etc/sysctl.conf was obsolete and the default config (in /usr/lib) set kernel.sysrq=16 (SYNC only)
   - replaced with `/etc/sysctl.d/magic-sysrq.conf` as described above
+
+- During install: hostname changed to sturling in rc.conf
+  - something else added it after "localhost" in /etc/hosts, I don't know what when or how, but I didn't do it myself. Which is nice.
+  - rc.conf has been deprecated in favor of systemd stuff for a while: hostname now goes in /etc/hostname
 
 ### Obsoleted by netcfg -> NetworkManager
 
