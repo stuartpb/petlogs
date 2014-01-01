@@ -55,7 +55,7 @@
 
 - created ~/.inputrc to set `show-all-if-unmodified` and `completion-ignore-case` on
 
-- commented line disabling magic sysrq in /etc/sysctl.conf
+- `# echo "kernel.sysrq=1" > /etc/sysctl.d/magic-sysrq.conf
 
 - added entries for swap partitions (by label, made in spare space on host systems) in /etc/fstab
   - one for the disk and one for an SD card fallback
@@ -129,6 +129,10 @@
 
 - copied /etc/grub.d/10_linux to 15_linux_xrl, modified it to generate listings with the arg added to start at runlevel 5
   - (which was then moved to /vfat when installing systemd, so nobody gets confused)
+
+- commented line disabling magic sysrq in /etc/sysctl.conf
+  - obsoleted by systemd updates: by systemd 207, /etc/sysctl.conf was obsolete and the default config (in /usr/lib) set kernel.sysrq=16 (SYNC only)
+  - replaced with `/etc/sysctl.d/magic-sysrq.conf` as described above
 
 ### Obsoleted by netcfg -> NetworkManager
 
