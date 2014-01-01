@@ -135,6 +135,7 @@
 - During install: hostname changed to sturling in rc.conf
   - something else added it after "localhost" in /etc/hosts, I don't know what when or how, but I didn't do it myself. Which is nice.
   - rc.conf has been deprecated in favor of systemd stuff for a while: hostname now goes in /etc/hostname
+  - In general I feel like this was probably a holdover from the old way of installing Arch
 
 ### Obsoleted by netcfg -> NetworkManager
 
