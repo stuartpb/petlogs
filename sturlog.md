@@ -147,6 +147,6 @@
 ### Upstream fixes
 
 -  /usr/share/applications/transmission-qt.desktop Exec line patched manually (%F -> %U) to fix magnet link opening
-  - see https://bugs.archlinux.org/task/29909?opened=12873&status%5B0%5D= for upstream status
+  - fixed December 2012, see https://bugs.archlinux.org/task/29909?opened=12873&status%5B0%5D= for history / upstream link
 
 
