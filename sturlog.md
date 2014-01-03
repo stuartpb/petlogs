@@ -82,6 +82,7 @@
   - whole bunch of compiz modules enabled:
     - all the render plugins
     - Static Application Switcher
+- "class=xfce4-notifyd | type=Notification" added to Window Rules -> No Focus
 
 ### XFCE
 
