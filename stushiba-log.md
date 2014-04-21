@@ -1,0 +1,1 @@
+- https://wiki.archlinux.org/index.php/LXDM#Incorrect_logout_handling
