@@ -1,2 +1,2 @@
 - https://wiki.archlinux.org/index.php/LXDM#Incorrect_logout_handling
-- remove Alt+Shift keybindings from ~/.config/openbox/rc.xml
+- remove desktop-switching keybindings from ~/.config/openbox/rc.xml
