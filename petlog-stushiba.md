@@ -121,7 +121,7 @@ the real punchline comes about half an hour later
 - reads more
 - oh wait
 
-## packer is finally installed and I know how to use it
+### packer is finally installed and I know how to use it
 
 still dont know how to dkms tho
 
