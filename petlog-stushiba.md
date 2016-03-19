@@ -141,7 +141,9 @@ breaking the package database with compiled kernel modules):
 - write section one from memory and `head /etc/pacman.d/mirrorlist` for the reflector command
 - write the second part from the output of `cat /root/.bash_history` like I said
 - `less ~/.bash_history`
-- > 
+
+contents of `~/.bash_history`:
+
 ```
 #!/bin/bash
 d=${BUILDDIR:-$PWD}
@@ -159,4 +161,5 @@ for p in ${@##-*}; do cd "$d"; curl "https://aur.archlinux.org/cgit/aur.git/snap
 d=${BUILDDIR:-$PWD}
 for p in ${@##-*}; do cd "$d"; curl "https://aur.archlinux.org/cgit/aur.git/snapshot/$p.tar.gz" |tar xz; cd "$p"; makepkg ${@##[^\-]*}; done
 ```
+
 - write the last part from the terminal's live up-arrow command history buffer
