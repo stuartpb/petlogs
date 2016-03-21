@@ -131,9 +131,8 @@ still dont know how to dkms tho
 - `pacman -S linux-headers`
 - `sudo pacman -S linux-headers`
 - installing the headers triggers DKMS and builds the wifi driver
-- yet to see if it actually works
 
-## and now we're caught up
+## and now we're caught up: opening https://gist.github.com on my Chromebook
 
 at this point I remember that I should be writing this down (always log tweaks you make to a pet box, especially if you're
 breaking the package database with compiled kernel modules):
@@ -162,4 +161,49 @@ d=${BUILDDIR:-$PWD}
 for p in ${@##-*}; do cd "$d"; curl "https://aur.archlinux.org/cgit/aur.git/snapshot/$p.tar.gz" |tar xz; cd "$p"; makepkg ${@##[^\-]*}; done
 ```
 
-- usng arrow keys, write the last part from the terminal's live command history buffer
+- using arrow keys, write the last part from the terminal's live command history buffer
+
+## changes after creating build log
+
+- yet to see if wifi module actually works
+- https://wiki.archlinux.org/index.php/General_recommendations
+- decide not to do any of https://wiki.archlinux.org/index.php/Activating_Numlock_on_Bootup in favor of just seeing if the bios has something
+- remember display managers are a thing
+- install and enable lightdm
+- discover deepin and figure what the heck, install deepin and deepin-extra too
+- Add iommu=pt to boot configs in /boot/refind_linux.conf
+- /boot/EFI/refind/refind.conf:
+  - change `scanfor` to be the Mac default (incorporating BIOS boot options)
+
+### reboot
+
+- "Incorrect password" every time at lightdm
+- Nothing anybody is saying online helps
+- open another teminal and change password to "lol"
+- try again
+- works
+- note to self that I should file a bug about this
+- enabled and started the NetworkManager.service
+- uninstalled chromium, installed google-chrome (dat netflix)
+- installed a bunch of WM/DEs, text editors, and goofs:
+  - scite
+  - scribes
+  - tea
+  - gobby
+  - mate, mate-extra
+  - lesstif
+  - windowmaker
+  - notion
+  - i3-wm
+  - xfce4
+  - xfce4-goodies
+  - bsd-games
+  - fortune-mod
+  - cowsay
+  - ponysay
+  - sl
+- `sudo pacman -S $(pacman -Ssq adobe pro-fonts)`
+- installed some driver stuff:
+  - mesa-vdpau
+  - libva-vdpau-driver
+- installed obs-studio
