@@ -18,7 +18,9 @@ bunch of other stuff that's probably in paclog
 
 bashed my head against the wall for a while because I didn't consult notes or wiki about having to install a greeter for lightdm, and didn't think to check the lightdm log file to figure this out
 
-uncommented the en us utf8 locale line in /etc/localegen.conf because apparently alarm does everything else but not THAT
+uncommented the en us utf8 locale line in /etc/localegen.conf (because apparently alarm does everything else but not THAT) then ran localegen
+
+uninstalled xf86-input-evdev and -synaptics which got inadvertently installed while trying to make lightdm work
 
 ## todo
 
