@@ -10,9 +10,9 @@ installed cgpt on sd card via `pacman -s cgpt` (which is an alias for `vboot-uti
 
 changed sdcard hostname so I'd know when I'm experimenting on that and not the locally-installed system
 
-installed libgl-mesa because the other 4 are for some kind of special chip that's irrelevant
+installed mesa-libgl because the other 4 (imx-gpu-viv) are for some kind of special chip that's irrelevant, and it's kind of annoying that I was asked, actually
 
-installed the libinput whatever instead of the evdev one
+installed the xf86-input-libinput instead of the evdev one
 
 installed the regular libx264 because 10bit is mostly an encoding advantage and doesn't have hardware support
 
@@ -39,8 +39,9 @@ changing password to something new, too
 ## todo
 
 - add stuart to wireshark group (per https://wiki.archlinux.org/index.php/Wireshark)
+  - `usermod -Ga wireshark stuart`?
 - .face
-- hostname
+- hostname (done? confirm via reboot)
 - fix audio
 - do the touch sensitivity thing
 - try mainline upstream kernel (via sd card), see if all hardware works with new kernel
