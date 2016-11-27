@@ -36,6 +36,8 @@ logging out and running `sudo usermod -l stuart -m -d /home/stuart alarm && grou
 
 changing password to something new, too (this broke the gnome keyring so now that' something I need to fix)
 
+created a conf file to make the touchpad finger-friendlier, but still not wild about it (see todo below)
+
 ## todo
 
 - **at least change the root password my god** (if it's safe it should get disabled altogether)
@@ -45,12 +47,12 @@ changing password to something new, too (this broke the gnome keyring so now tha
 - .face, GECOS
 - fix audio
 - remove password protection circa gnome keyring
-- do the touch sensitivity thing
+- do the touch sensitivity thing from the alarm wiki page
 - try mainline upstream kernel (via sd card), see if all hardware works with new kernel
 - rewrite the mess that is the current documentation for doing this, link to Google upstream docs
 - fix touchpad having a "right button" region (setting)
   - cinnamon's settings panel is no good for this, looks like it's gonna have to be a conf file
-  - that'll work for now (done), but the other options via these GUIs don't make a conf file. how do they do their thing? is there a way I can hack `"ClickMethod" "fingers"` (https://wiki.archlinux.org/index.php/Libinput#Common_options) into whatever it is that they rather use?
+  - that'll work for now (done), but the other options via these GUIs don't make a conf file. how do they do their thing? is there a way I can hack `"ClickMethod" "fingers"` (https://wiki.archlinux.org/index.php/Libinput#Common_options) into whatever it is that they rather use?
 - try non-verified firmware bootstrap chaining
 - crack open and remove read-only ring
 - flash nv-uboot if it's safe
@@ -73,4 +75,5 @@ no, wait, that is, in fact, supposed to be the default behavior (see `man sudoer
 - what's up with mesa-vdpau being AUR only here?
 - why is packer prompting alarm for password when wheel is set to allow without prompt?
 - why are hangouts windows not having the hangouts icon in the budgie panel? what's it going to take to fix this?
-- what's this "aur" repository?
+- what's the deal with this "aur" repository?
+- why does the panel keep disappearing when I (accidetally) hit alt+F2?
