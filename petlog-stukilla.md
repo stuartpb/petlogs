@@ -32,9 +32,13 @@ uninstalled xf86-input-evdev and -synaptics which got inadvertently installed wh
 
 installed guake, changed the hotkey to F1 because lol chromebooks have no f12
 
+logging out and running `sudo usermod -l stuart -m -d /home/stuart alarm && groupmod -n stuart alarm` because why keep a dormant user around, especially when I've already started to customize this one
+
+changing password to something new, too
+
 ## todo
 
-- make stuart user who is wheel (and wireshark per https://wiki.archlinux.org/index.php/Wireshark)
+- add stuart to wireshark group (per https://wiki.archlinux.org/index.php/Wireshark)
 - .face
 - hostname
 - fix audio
