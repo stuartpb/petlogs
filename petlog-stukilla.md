@@ -34,24 +34,28 @@ installed guake, changed the hotkey to F1 because lol chromebooks have no f12
 
 logging out and running `sudo usermod -l stuart -m -d /home/stuart alarm && groupmod -n stuart alarm` because why keep a dormant user around, especially when I've already started to customize this one
 
-changing password to something new, too
+changing password to something new, too (this broke the gnome keyring so now that' something I need to fix)
 
 ## todo
 
+- **at least change the root password my god** (if it's safe it should get disabled altogether)
 - add stuart to wireshark group (per https://wiki.archlinux.org/index.php/Wireshark)
   - `usermod -Ga wireshark stuart`?
-- .face
-- hostname (done? confirm via reboot)
+  - why is the wireshark group missing, need to reread that page
+- .face, GECOS
 - fix audio
+- remove password protection circa gnome keyring
 - do the touch sensitivity thing
 - try mainline upstream kernel (via sd card), see if all hardware works with new kernel
 - rewrite the mess that is the current documentation for doing this, link to Google upstream docs
 - fix touchpad having a "right button" region (setting)
+  - cinnamon's settings panel is no good for this, looks like it's gonna have to be a conf file
 - try non-verified firmware bootstrap chaining
 - crack open and remove read-only ring
 - flash nv-uboot if it's safe
 - maybe also try that second one, with the framebuffer etc?
 - fix the dang gnome footprint icon not being the nine-squares icon in budgie
+  - see https://github.com/budgie-desktop/budgie-desktop/issues/250
 - either enable netmanager or get a tray icon for netctl
 
 ## asked questions
