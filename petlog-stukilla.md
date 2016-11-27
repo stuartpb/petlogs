@@ -59,6 +59,9 @@ created a conf file to make the touchpad finger-friendlier, but still not wild a
 - maybe also try that second one, with the framebuffer etc?
 - fix the dang gnome footprint icon not being the nine-squares icon in budgie
   - see https://github.com/budgie-desktop/budgie-desktop/issues/250
+  - oughta post that in https://bbs.archlinux.org/viewtopic.php?id=209293
+  - where's the panel/applets/budgie-menu/com.solus-project.budgie-menu.gschema.xml he mentioned patching installed to, is it world-writable / not package managed
+  - also if this was fixed upstream why is it like this here
 - either enable netmanager or get a tray icon for netctl
 
 ## asked questions
