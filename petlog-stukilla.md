@@ -50,6 +50,7 @@ changing password to something new, too (this broke the gnome keyring so now tha
 - rewrite the mess that is the current documentation for doing this, link to Google upstream docs
 - fix touchpad having a "right button" region (setting)
   - cinnamon's settings panel is no good for this, looks like it's gonna have to be a conf file
+  - that'll work for now (done), but the other options via these GUIs don't make a conf file. how do they do their thing? is there a way I can hack `"ClickMethod" "fingers"` (https://wiki.archlinux.org/index.php/Libinput#Common_options) into whatever it is that they rather use?
 - try non-verified firmware bootstrap chaining
 - crack open and remove read-only ring
 - flash nv-uboot if it's safe
