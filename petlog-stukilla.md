@@ -1,8 +1,14 @@
-uuuuuuugh
+# installing arch linux on a chromebook
 
-installed cgpt on sd card which is whatever alias
+## uuuuuuugh
 
-changed sdcard hostname so I'd know when I'm experimenting on that and not the other one
+followed the pretty straightforward instructions to put the alarm image on an sd card from chrome
+
+tried to follow the instructions again to wipe chromium etc but, oops, no cgpt within Arch
+
+installed cgpt on sd card via `pacman -s cgpt` (which is an alias for `vboot-utils` somehow?), lucky break
+
+changed sdcard hostname so I'd know when I'm experimenting on that and not the locally-installed system
 
 installed libgl-mesa because the other 4 are for some kind of special chip that's irrelevant
 
@@ -22,9 +28,13 @@ uncommented the en us utf8 locale line in /etc/localegen.conf (because apparentl
 
 uninstalled xf86-input-evdev and -synaptics which got inadvertently installed while trying to make lightdm work
 
+## running
+
+installed guake, changed the hotkey to F1 because lol chromebooks have no f12
+
 ## todo
 
-- make stuart user who is wheel
+- make stuart user who is wheel (and wireshark per https://wiki.archlinux.org/index.php/Wireshark)
 - .face
 - hostname
 - fix audio
@@ -42,6 +52,7 @@ uninstalled xf86-input-evdev and -synaptics which got inadvertently installed wh
 ## to answer
 
 - is there any way to speed this up a little? maybe make the video a little less sluggish? hardware acceleration?
-- what was that one mesa package that was coming up no results? mesa-vdpau?
+- what's up with mesa-vdpau being AUR only here?
 - why is packer prompting alarm for password when wheel is set to allow without prompt?
 - why are hangouts windows not having the hangouts icon in the budgie panel? what's it going to take to fix this?
+- what's this "aur" repository?
