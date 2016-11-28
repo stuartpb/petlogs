@@ -79,4 +79,5 @@ no, wait, that is, in fact, supposed to be the default behavior (see `man sudoer
 - why is packer prompting alarm for password when wheel is set to allow without prompt?
 - why are hangouts windows not having the hangouts icon in the budgie panel? what's it going to take to fix this?
 - what's the deal with this "aur" repository?
+  - apparently this? https://github.com/archlinuxarm/PKGBUILDs/tree/master/aur
 - why does the panel keep disappearing when I (accidetally) hit alt+F2?
