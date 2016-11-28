@@ -75,6 +75,7 @@ no, wait, that is, in fact, supposed to be the default behavior (see `man sudoer
 ## to answer
 
 - is there any way to speed this up a little? maybe make the video a little less sluggish? hardware acceleration?
+- should I install xf86-video-armsoc-chromium? is there more graphics driver coverage I'm missing here?
 - what's up with mesa-vdpau being AUR only here?
 - why is packer prompting alarm for password when wheel is set to allow without prompt?
 - why are hangouts windows not having the hangouts icon in the budgie panel? what's it going to take to fix this?
