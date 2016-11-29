@@ -123,6 +123,8 @@ installed wireshark a while ago, added stuart to wireshark group (per https://wi
 - cinnamon. what's the perf like? better/same as budgie?
 - gnome and/or kde/plasma - it looks like I've got the space so I might as well risk it
 
+## quest status
+
 ## todo
 
 - **screw with some kind of systemd rule or whatever so that what just happened never happens again** - disable the power button altogether if that's what it takes, but ideally I'd have CrOS's behavior back: tapping the button starts a fade-and-zoom, holding it to completion logs me out (I think they technically ripped this off from OSX but I don't care, it's good)
@@ -132,14 +134,8 @@ installed wireshark a while ago, added stuart to wireshark group (per https://wi
   - write console-command-based instructions for fixing audio?
   - also maybe this should be fixed upstream like hey just maybe?
 - remove password protection circa gnome keyring
-- make touchpad scrolling smooth like cros instead of a janky wheel-analogue like it is right now?
-  - do the touch sensitivity thing from the alarm wiki page
 - keep plugging away at that upstream kernel stuff
 - rewrite the mess that is the current documentation for doing this, link to Google upstream docs
-- fix touchpad having a "right button" region (setting)
-  - cinnamon's settings panel is no good for this, looks like it's gonna have to be a conf file
-  - that'll work for now (done), but the other options via these GUIs don't make a conf file. how do they do their thing? is there a way I can hack `"ClickMethod" "fingers"` (https://wiki.archlinux.org/index.php/Libinput#Common_options) into whatever it is that they rather use?
-  - see above notes about how this is apparently some kind of DE-specific thing, and if I want something that'll carry over to other ones, I'll need to pop it in Xorg, so whatever (though also it seems like I'd have to learn that approach ANYWAY since Budgie didn't take the changes in the xorg conf). Though it'd still be cool to have this somewhere in .config instead of /etc maybe
 - try non-verified firmware bootstrap chaining
 - crack open and remove read-only ring
 - flash nv-uboot if it's safe
@@ -149,8 +145,7 @@ installed wireshark a while ago, added stuart to wireshark group (per https://wi
   - oughta post that in https://bbs.archlinux.org/viewtopic.php?id=209293
   - where's the panel/applets/budgie-menu/com.solus-project.budgie-menu.gschema.xml he mentioned patching installed to, is it world-writable / not package managed
   - also if this was fixed upstream why is it like this here
-- either enable netmanager or get a tray icon for netctl
-- add emulators and other computer game crap like that even though this is supposed to be a dedicated machine for hacking
+- add emulators and other computer game crap like that I go for every time I set up a Linux system even though this one is supposed to be a dedicated machine for hacking
 - codify what a petlog is and write an explainer of why you should do it every time you install linux (tldr, you're going to be writing a pleading forum post at some point, and having what you did to "cause" your problem is going to go a long way toward making every Linux forum's assholes slightly more shut the hell up)
   - ooh! even better, I should just collect all my petlogs into one repo with a README that has that thing, since I'm not REALLY getting all that much out of Gist for this
 
@@ -159,6 +154,26 @@ installed wireshark a while ago, added stuart to wireshark group (per https://wi
 is there a way I could use vim or whatever to spawn an editor for this file where, every time I save it, it does a git commit and git push (and optionally prompts me for a commit message and otherwise just pushes it with something like whatever default commit message Gist uses)?
 
 maybe even just a bash script with nano and inotify or something
+
+### Making the Touchpad Work Normally
+
+- fix touchpad having a "right button" region (setting)
+  - cinnamon's settings panel is no good for this, looks like it's gonna have to be a conf file
+  - that'll work for now (done), but the other options via these GUIs don't make a conf file. how do they do their thing? is there a way I can hack `"ClickMethod" "fingers"` (https://wiki.archlinux.org/index.php/Libinput#Common_options) into whatever it is that they rather use?
+  - see above notes about how this is apparently some kind of DE-specific thing, and if I want something that'll carry over to other ones, I'll need to pop it in Xorg, so whatever (though also it seems like I'd have to learn that approach ANYWAY since Budgie didn't take the changes in the xorg conf). Though it'd still be cool to have this somewhere in .config instead of /etc maybe
+- make touchpad scrolling smooth like cros instead of a janky wheel-analogue like it is right now?
+- do the touch sensitivity thing from the alarm wiki page
+  - pretty sure that's actually a legacy thing from the synaptics input driver that's no longer relevant today
+
+### Managing Wifi
+
+- either enable netmanager or get a tray icon for netctl
+
+I have network-manager-applet installed, as it's a prereq for Cinnamon (and I installed it for Budgie), but I'd rather have systemd take care of bringing up wifi automatically in cooperation with netctl &co, so I haven't activated networkmanager.service.
+
+Right now, I'm in LXDE, and it has a really nice panel widget for network management, and the NetworkManager one just sits there dead next to it, noting that the service isn't running when clicked.
+
+What I want is a way to make it so every DE can have a single applet for networking, and each one using the lightest-weight solution: so LXDE just uses what I've got here, others maybe use that netctl applet, and Cinnamon maybe gets over NetworkManager somehow (like we disable the applet in favor of that other one I described).
 
 ## asked questions
 
