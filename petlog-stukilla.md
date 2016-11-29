@@ -149,6 +149,7 @@ note the bool options being set to `true` by not specifying a parameter because 
 - either enable netmanager or get a tray icon for netctl
 - add emulators and other computer game crap like that even though this is supposed to be a dedicated machine for hacking
 - codify what a petlog is and write an explainer of why you should do it every time you install linux (tldr, you're going to be writing a pleading forum post at some point, and having what you did to "cause" your problem is going to go a long way toward making every Linux forum's assholes slightly more shut the hell up)
+  - ooh! even better, I should just collect all my petlogs into one repo with a README that has that thing, since I'm not REALLY getting all that much out of Gist for this
 
 ## sexy exciting ideas
 
