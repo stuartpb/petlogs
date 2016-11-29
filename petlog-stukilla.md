@@ -80,6 +80,10 @@ this will probably have to be repeated for headphones
 
 didn't have to do the part where I change the master volume, I think desktop environments take care of that
 
+logged out of budgie because it was driving me nuts and I wanted to try a compositing wm. tried to boot sway and it wouldn't go (kicked back to lightdm). booted to LXDE, and, well, this is interesting:
+
+lxde is way faster - none of the lag I was seeing with Budgie. However, none of the input stuff I set - tap-to-click, natural scrolling - is active, *except* the one I set via Xorg conf (multitouch-only buttons). It's almost as if Budgie wasn't using Xorg at all, but some kind of slower software compositor. Like, this is what I'd expect in some kind of scenario where it's running Weston and Wayland doesn't have a hardware GL implementation. But Budgie apparently has no Wayland support, so that couldn't be it. But I feel like it's probably something like that.
+
 ## todo
 
 - **at least change the root password my god** (if it's safe it should get disabled altogether)
