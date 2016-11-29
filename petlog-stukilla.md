@@ -116,6 +116,8 @@ note the bool options being set to `true` by not specifying a parameter because 
 
 `passwd -l root`, I feel like I've got things under control enough that I can do all my work from my own account
 
+installed wireshark a while ago, added stuart to wireshark group (per https://wiki.archlinux.org/index.php/Wireshark) via `gpasswd -a stuart wireshark` (I remember having trouble when I tried to do this originally, maybe needed to reboot to reload group info or something)
+
 ## to try
 
 - cinnamon. what's the perf like? better/same as budgie?
@@ -124,9 +126,7 @@ note the bool options being set to `true` by not specifying a parameter because 
 ## todo
 
 - **screw with some kind of systemd rule or whatever so that what just happened never happens again** - disable the power button altogether if that's what it takes, but ideally I'd have CrOS's behavior back: tapping the button starts a fade-and-zoom, holding it to completion logs me out (I think they technically ripped this off from OSX but I don't care, it's good)
-- add stuart to wireshark group (per https://wiki.archlinux.org/index.php/Wireshark)
-  - `usermod -Ga wireshark stuart`?
-  - why is the wireshark group missing, need to reread that page
+
 - .face, GECOS
 - continue fixing audio for headphones maybe
   - write console-command-based instructions for fixing audio?
