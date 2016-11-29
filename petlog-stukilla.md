@@ -142,6 +142,12 @@ note the bool options being set to `true` by not specifying a parameter because 
 - either enable netmanager or get a tray icon for netctl
 - add emulators and other computer game crap like that even though this is supposed to be a dedicated machine for hacking
 
+## sexy exciting ideas
+
+is there a way I could use vim or whatever to spawn an editor for this file where, every time I save it, it does a git commit and git push (and optionally prompts me for a commit message and otherwise just pushes it with something like whatever default commit message Gist uses)?
+
+maybe even just a bash script with nano and inotify or something
+
 ## asked questions
 
 ### why is packer prompting me for a password to sudo something when `sudo -l` says I have NOPASSWD permissions?
