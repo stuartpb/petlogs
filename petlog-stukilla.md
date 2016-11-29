@@ -84,6 +84,11 @@ logged out of budgie because it was driving me nuts and I wanted to try a compos
 
 lxde is way faster - none of the lag I was seeing with Budgie. However, none of the input stuff I set - tap-to-click, natural scrolling - is active, *except* the one I set via Xorg conf (multitouch-only buttons). It's almost as if Budgie wasn't using Xorg at all, but some kind of slower software compositor. Like, this is what I'd expect in some kind of scenario where it's running Weston and Wayland doesn't have a hardware GL implementation. But Budgie apparently has no Wayland support, so that couldn't be it. But I feel like it's probably something like that.
 
+## to try
+
+- cinnamon. what's the perf like? better/same as budgie?
+- gnome and/or kde/plasma - it looks like I've got the space so I might as well risk it
+
 ## todo
 
 - **at least change the root password my god** (if it's safe it should get disabled altogether)
@@ -99,6 +104,7 @@ lxde is way faster - none of the lag I was seeing with Budgie. However, none of 
 - fix touchpad having a "right button" region (setting)
   - cinnamon's settings panel is no good for this, looks like it's gonna have to be a conf file
   - that'll work for now (done), but the other options via these GUIs don't make a conf file. how do they do their thing? is there a way I can hack `"ClickMethod" "fingers"` (https://wiki.archlinux.org/index.php/Libinput#Common_options) into whatever it is that they rather use?
+  - see above notes about how this is apparently some kind of DE-specific thing, and if I want something that'll carry over to other ones, I'll need to pop it in Xorg, so whatever (though also it seems like I'd have to learn that approach ANYWAY since Budgie didn't take the changes in the xorg conf). Though it'd still be cool to have this somewhere in .config instead of /etc maybe
 - try non-verified firmware bootstrap chaining
 - crack open and remove read-only ring
 - flash nv-uboot if it's safe
