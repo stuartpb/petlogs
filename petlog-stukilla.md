@@ -54,6 +54,8 @@ got into another bloody mess after booting into the onboard os because of my att
 
 anyway that stupid typo made it so the ENTIRE LOGIN MANAGER COULD NOT START so that was fun trying to diagnose based on log files I was seeing no indication of opening and forum threads that render like ass in Lynx/w3m
 
+ok so then I edited the file so that it has that now, but now guess what? IT DOES NOTHING AND I STILL HAVE CLICKS TRIGGERING PASTE IF I PUSH THE WRONG PART OF THE PAD FML
+
 ## todo
 
 - **at least change the root password my god** (if it's safe it should get disabled altogether)
