@@ -38,6 +38,16 @@ changing password to something new, too (this broke the gnome keyring so now tha
 
 created a conf file to make the touchpad finger-friendlier, but still not wild about it (see todo below)
 
+## adventures in kernel fuckery
+
+popped sdcard back in and ran the kernel update stuff
+
+booted and it seems to work but yeah a bunch of stuff is broken
+
+tried to get some desktop environments installed but didn't have much luck
+
+touchpad was broken after doing lightdm -> ldxe, then after rolling back the kernel it seemed fine so it looks like the kernel probably breaks touchpads right now
+
 ## todo
 
 - **at least change the root password my god** (if it's safe it should get disabled altogether)
@@ -48,7 +58,7 @@ created a conf file to make the touchpad finger-friendlier, but still not wild a
 - fix audio
 - remove password protection circa gnome keyring
 - do the touch sensitivity thing from the alarm wiki page
-- try mainline upstream kernel (via sd card), see if all hardware works with new kernel
+- keep plugging away at that upstream kernel stuff
 - rewrite the mess that is the current documentation for doing this, link to Google upstream docs
 - fix touchpad having a "right button" region (setting)
   - cinnamon's settings panel is no good for this, looks like it's gonna have to be a conf file
@@ -72,13 +82,14 @@ this should get posted on stackoverflow, but essentially: it's probably because 
 
 no, wait, that is, in fact, supposed to be the default behavior (see `man sudoers` section on User Authentication). so now, uh, I don't know? this feels like a bug: it reads SUDO_USER to determine that the original invoker is not root, but then it compares based on the rules that would apply for root (not the invoking user).
 
+### what's the deal with this "aur" repository?
+
+apparently this? https://github.com/archlinuxarm/PKGBUILDs/tree/master/aur
+
 ## to answer
 
 - is there any way to speed this up a little? maybe make the video a little less sluggish? hardware acceleration?
 - should I install xf86-video-armsoc-chromium? is there more graphics driver coverage I'm missing here?
 - what's up with mesa-vdpau being AUR only here?
-- why is packer prompting alarm for password when wheel is set to allow without prompt?
 - why are hangouts windows not having the hangouts icon in the budgie panel? what's it going to take to fix this?
-- what's the deal with this "aur" repository?
-  - apparently this? https://github.com/archlinuxarm/PKGBUILDs/tree/master/aur
 - why does the panel keep disappearing when I (accidetally) hit alt+F2?
