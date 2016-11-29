@@ -123,12 +123,9 @@ installed wireshark a while ago, added stuart to wireshark group (per https://wi
 - cinnamon. what's the perf like? better/same as budgie?
 - gnome and/or kde/plasma - it looks like I've got the space so I might as well risk it
 
-## quest status
-
 ## todo
 
 - **screw with some kind of systemd rule or whatever so that what just happened never happens again** - disable the power button altogether if that's what it takes, but ideally I'd have CrOS's behavior back: tapping the button starts a fade-and-zoom, holding it to completion logs me out (I think they technically ripped this off from OSX but I don't care, it's good)
-
 - .face, GECOS
 - continue fixing audio for headphones maybe
   - write console-command-based instructions for fixing audio?
@@ -146,10 +143,13 @@ installed wireshark a while ago, added stuart to wireshark group (per https://wi
   - where's the panel/applets/budgie-menu/com.solus-project.budgie-menu.gschema.xml he mentioned patching installed to, is it world-writable / not package managed
   - also if this was fixed upstream why is it like this here
 - add emulators and other computer game crap like that I go for every time I set up a Linux system even though this one is supposed to be a dedicated machine for hacking
+
+## quest status
+
+### Bettering Petlogs
+
 - codify what a petlog is and write an explainer of why you should do it every time you install linux (tldr, you're going to be writing a pleading forum post at some point, and having what you did to "cause" your problem is going to go a long way toward making every Linux forum's assholes slightly more shut the hell up)
   - ooh! even better, I should just collect all my petlogs into one repo with a README that has that thing, since I'm not REALLY getting all that much out of Gist for this
-
-## sexy exciting ideas
 
 is there a way I could use vim or whatever to spawn an editor for this file where, every time I save it, it does a git commit and git push (and optionally prompts me for a commit message and otherwise just pushes it with something like whatever default commit message Gist uses)?
 
@@ -175,6 +175,17 @@ Right now, I'm in LXDE, and it has a really nice panel widget for network manage
 
 What I want is a way to make it so every DE can have a single applet for networking, and each one using the lightest-weight solution: so LXDE just uses what I've got here, others maybe use that netctl applet, and Cinnamon maybe gets over NetworkManager somehow (like we disable the applet in favor of that other one I described).
 
+### Making Video Beautiful and Fast
+
+
+### why is my video performance so bad?
+
+- should I install xf86-video-armsoc-chromium? is there more graphics driver coverage I'm missing here?
+  - i appear to already have this package, so that's not the problem
+- what's up with mesa-vdpau being AUR only here?
+
+Just noticed Guake was translucent over windows in Budgie, only translucent over desktop in LXDE. Score another point for the "Budgie was probably compositing in software" hypothesis.
+
 ## asked questions
 
 ### why is packer prompting me for a password to sudo something when `sudo -l` says I have NOPASSWD permissions?
@@ -186,12 +197,6 @@ no, wait, that is, in fact, supposed to be the default behavior (see `man sudoer
 ### what's the deal with this "aur" repository?
 
 apparently this? https://github.com/archlinuxarm/PKGBUILDs/tree/master/aur
-
-### why is my video performance so bad?
-
-- should I install xf86-video-armsoc-chromium? is there more graphics driver coverage I'm missing here?
-  - i appear to already have this package, so that's not the problem
-- what's up with mesa-vdpau being AUR only here?
 
 ### why do Chromium xtension &c windows have Chromium icons instead of the extension etc's icon?
 
