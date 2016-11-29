@@ -48,6 +48,12 @@ tried to get some desktop environments installed but didn't have much luck
 
 touchpad was broken after doing lightdm -> ldxe, then after rolling back the kernel it seemed fine so it looks like the kernel probably breaks touchpads right now
 
+## uuuuuuuuuuuuuuuugh
+
+got into another bloody mess after booting into the onboard os because of my attempt to fix the touchpad. Stupid https://wiki.archlinux.org/index.php/Libinput#Common_options doesn't explain that you're supposed to precede the "options" it lists with `Option` (oh yeah let's just assume that I love writing xorg conf files and have the syntax memorized instead of actively trying to figure out how to never use them again), and besides that it's wrong because it's `clickfinger` not `fingers` jfc
+
+anyway that stupid typo made it so the ENTIRE LOGIN MANAGER COULD NOT START so that was fun trying to diagnose based on log files I was seeing no indication of opening and forum threads that render like ass in Lynx/w3m
+
 ## todo
 
 - **at least change the root password my god** (if it's safe it should get disabled altogether)
