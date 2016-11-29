@@ -118,6 +118,10 @@ note the bool options being set to `true` by not specifying a parameter because 
 
 installed wireshark a while ago, added stuart to wireshark group (per https://wiki.archlinux.org/index.php/Wireshark) via `gpasswd -a stuart wireshark` (I remember having trouble when I tried to do this originally, maybe needed to reboot to reload group info or something)
 
+`sudo chfn -f "Stuart P. Bentley" stuart` because full name data is apparently restricted for some dumb reason
+
+downloaded my github profile image as ~/.face
+
 ## to try
 
 - cinnamon. what's the perf like? better/same as budgie?
@@ -126,7 +130,6 @@ installed wireshark a while ago, added stuart to wireshark group (per https://wi
 ## todo
 
 - **screw with some kind of systemd rule or whatever so that what just happened never happens again** - disable the power button altogether if that's what it takes, but ideally I'd have CrOS's behavior back: tapping the button starts a fade-and-zoom, holding it to completion logs me out (I think they technically ripped this off from OSX but I don't care, it's good)
-- .face, GECOS
 - continue fixing audio for headphones maybe
   - write console-command-based instructions for fixing audio?
   - also maybe this should be fixed upstream like hey just maybe?
@@ -143,8 +146,6 @@ installed wireshark a while ago, added stuart to wireshark group (per https://wi
   - where's the panel/applets/budgie-menu/com.solus-project.budgie-menu.gschema.xml he mentioned patching installed to, is it world-writable / not package managed
   - also if this was fixed upstream why is it like this here
 - add emulators and other computer game crap like that I go for every time I set up a Linux system even though this one is supposed to be a dedicated machine for hacking
-
-`sudo chfn -f "Stuart P. Bentley" stuart` because full name data is apparently restricted for some dumb reason
 
 ## quest status
 
