@@ -90,6 +90,22 @@ oh yeah, also, this is weird: had to log into github again, and other stuff that
 
 also, Budgie didn't pester me about the keyring at all, not sure if that's just because I didn't do anything that would have triggered it or if it's because the problem magically fixed itself 
 
+D'OH, I hit the power button trying to restert the X server with ctrl+alt+backspace. well, upshot is that now I have the fully-reloaded version of my touchpad configuration loaded up. for posterity, `cat /etc/X11/xorg.conf.d/30-touchpad.conf`:
+
+```
+Section "InputClass"
+        Identifier "libinput touchpad catchall"
+        MatchIsTouchpad "on"
+        MatchDevicePath "/dev/input/event*"
+        Option "Tapping"
+        Option "NaturalScrolling"
+        Option "ClickMethod" "clickfinger"
+        Driver "libinput"
+EndSection
+```
+
+note the bool options being set to `true` by not specifying a parameter because otherwise I'd have to pick which one word from out of the twelve ways that xorg.conf supports spelling boolean values I want to screw with
+
 ## to try
 
 - cinnamon. what's the perf like? better/same as budgie?
@@ -97,6 +113,7 @@ also, Budgie didn't pester me about the keyring at all, not sure if that's just 
 
 ## todo
 
+- **screw with some kind of systemd rule or whatever so that what just happened never happens again** - disable the power button altogether if that's what it takes, but ideally I'd have CrOS's behavior back: tapping the button starts a fade-and-zoom, holding it to completion logs me out (I think they technically ripped this off from OSX but I don't care, it's good)
 - **at least change the root password my god** (if it's safe it should get disabled altogether)
 - add stuart to wireshark group (per https://wiki.archlinux.org/index.php/Wireshark)
   - `usermod -Ga wireshark stuart`?
