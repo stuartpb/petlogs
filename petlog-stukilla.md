@@ -1,11 +1,5 @@
 # installing arch linux on a chromebook
 
-- this is a bulleted list
-  - it keeps Gist from auto-detecting my space size as 8 due to the xorg conf below
-  - really though I should just fix that conf's indentation
-  - I don't think that'd hurt recopying it. does xorg require tabs like a chump?
-  - I'm pretty sure that's just makefiles
-
 ## uuuuuuugh
 
 followed the pretty straightforward instructions to put the alarm image on an sd card from chrome
@@ -100,13 +94,13 @@ D'OH, I hit the power button trying to restert the X server with ctrl+alt+backsp
 
 ```
 Section "InputClass"
-        Identifier "libinput touchpad catchall"
-        MatchIsTouchpad "on"
-        MatchDevicePath "/dev/input/event*"
-        Option "Tapping"
-        Option "NaturalScrolling"
-        Option "ClickMethod" "clickfinger"
-        Driver "libinput"
+  Identifier "libinput touchpad catchall"
+  MatchIsTouchpad "on"
+  MatchDevicePath "/dev/input/event*"
+  Option "Tapping"
+  Option "NaturalScrolling"
+  Option "ClickMethod" "clickfinger"
+  Driver "libinput"
 EndSection
 ```
 
