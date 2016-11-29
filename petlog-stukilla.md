@@ -112,6 +112,8 @@ EndSection
 
 note the bool options being set to `true` by not specifying a parameter because otherwise I'd have to pick which one word from out of the twelve ways that xorg.conf supports spelling boolean values I want to screw with
 
+`ssh-keygen -t rsa -b 4096` so this machine has its own GH credentials
+
 ## to try
 
 - cinnamon. what's the perf like? better/same as budgie?
