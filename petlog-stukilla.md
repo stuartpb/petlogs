@@ -129,10 +129,6 @@ downloaded my github profile image as ~/.face
 
 ## todo
 
-- **screw with some kind of systemd rule or whatever so that what just happened never happens again** - disable the power button altogether if that's what it takes, but ideally I'd have CrOS's behavior back: tapping the button starts a fade-and-zoom, holding it to completion logs me out (I think they technically ripped this off from OSX but I don't care, it's good)
-- continue fixing audio for headphones maybe
-  - write console-command-based instructions for fixing audio?
-  - also maybe this should be fixed upstream like hey just maybe?
 - remove password protection circa gnome keyring
 - keep plugging away at that upstream kernel stuff
 - rewrite the mess that is the current documentation for doing this, link to Google upstream docs
@@ -140,11 +136,6 @@ downloaded my github profile image as ~/.face
 - crack open and remove read-only ring
 - flash nv-uboot if it's safe
 - maybe also try that second one, with the framebuffer etc?
-- fix the dang gnome footprint icon not being the nine-squares icon in budgie
-  - see https://github.com/budgie-desktop/budgie-desktop/issues/250
-  - oughta post that in https://bbs.archlinux.org/viewtopic.php?id=209293
-  - where's the panel/applets/budgie-menu/com.solus-project.budgie-menu.gschema.xml he mentioned patching installed to, is it world-writable / not package managed
-  - also if this was fixed upstream why is it like this here
 - add emulators and other computer game crap like that I go for every time I set up a Linux system even though this one is supposed to be a dedicated machine for hacking
 
 ## quest status
@@ -178,8 +169,12 @@ Right now, I'm in LXDE, and it has a really nice panel widget for network manage
 
 What I want is a way to make it so every DE can have a single applet for networking, and each one using the lightest-weight solution: so LXDE just uses what I've got here, others maybe use that netctl applet, and Cinnamon maybe gets over NetworkManager somehow (like we disable the applet in favor of that other one I described).
 
-### Making Video Beautiful and Fast
+### The Power of Power
 
+- **screw with some kind of systemd rule or whatever so that what just happened never happens again** - disable the power button altogether if that's what it takes, but ideally I'd have CrOS's behavior back: tapping the button starts a fade-and-zoom, holding it to completion logs me out (I think they technically ripped this off from OSX but I don't care, it's good)
+- lid suspend? (don't think I actually want this generally speaking but it'd be nice to be ready for it)
+
+## asked questions
 
 ### why is my video performance so bad?
 
@@ -189,8 +184,14 @@ What I want is a way to make it so every DE can have a single applet for network
 
 Just noticed Guake was translucent over windows in Budgie, only translucent over desktop in LXDE. Score another point for the "Budgie was probably compositing in software" hypothesis.
 
-## asked questions
+### what's the deal with this audio situation?
 
+- continue fixing audio for headphones maybe
+  - write console-command-based instructions for fixing audio?
+  - also maybe this should be fixed upstream like hey just maybe?
+  
+just like Managing Wifi, LXDE has a panel widget for volume, but it has a REALLY ugly icon, and right-clicking it and picking '"Volume Control" Settings' brings up alsamixer in LXTerminal, which is REALLY weird. Aren't there better solutions? At least an actual graphical mixer I could use instead of alsamixer? Maybe a dedicated tray icon app (ugh)?
+  
 ### why is packer prompting me for a password to sudo something when `sudo -l` says I have NOPASSWD permissions?
 
 this should get posted on stackoverflow, but essentially: it's probably because sudo is being evaluated in the context of `root`, and not the original user, and `root` isn't in `wheel`, and as such matches the `root ALL=(ALL) ALL` rule, which doesn't have nopasswd. not sure if this is worth fixing, I mean, probably? prompting root for their own password when they *already have root permissions* seems a little silly (is there a way to tell sudo "any user is allowed to sudo themselves without a password"?)
@@ -207,6 +208,16 @@ ie hangouts windows not having the hangouts icon in panel
 
 also: what's it going to take to fix this?
 
-### why does the budgie panel keep disappearing when I (accidetally) hit alt+F2?
+also whenever hangouts notifies, the thing keeps flashing on my main chromium window until I reload whatever tab I had open, ugh this is just as bad as it is on Windows
+
+### why does the budgie panel keep disappearing when I (accidentally) hit alt+F2?
 
 most likely answer based on having used it for three days: because budgie is bad
+
+see also:
+
+- fix the dang gnome footprint icon not being the nine-squares icon in budgie
+  - see https://github.com/budgie-desktop/budgie-desktop/issues/250
+  - oughta post that in https://bbs.archlinux.org/viewtopic.php?id=209293
+  - where's the panel/applets/budgie-menu/com.solus-project.budgie-menu.gschema.xml he mentioned patching installed to, is it world-writable / not package managed
+  - also if this was fixed upstream why is it like this here
