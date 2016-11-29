@@ -144,6 +144,8 @@ installed wireshark a while ago, added stuart to wireshark group (per https://wi
   - also if this was fixed upstream why is it like this here
 - add emulators and other computer game crap like that I go for every time I set up a Linux system even though this one is supposed to be a dedicated machine for hacking
 
+`sudo chfn -f "Stuart P. Bentley" stuart` because full name data is apparently restricted for some dumb reason
+
 ## quest status
 
 ### Bettering Petlogs
