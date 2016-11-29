@@ -84,6 +84,12 @@ logged out of budgie because it was driving me nuts and I wanted to try a compos
 
 lxde is way faster - none of the lag I was seeing with Budgie. However, none of the input stuff I set - tap-to-click, natural scrolling - is active, *except* the one I set via Xorg conf (multitouch-only buttons). It's almost as if Budgie wasn't using Xorg at all, but some kind of slower software compositor. Like, this is what I'd expect in some kind of scenario where it's running Weston and Wayland doesn't have a hardware GL implementation. But Budgie apparently has no Wayland support, so that couldn't be it. But I feel like it's probably something like that.
 
+youtube isn't buttery smooth - a little stuttering, tearing - but it's not unwatchable, unlike budgie.
+
+oh yeah, also, this is weird: had to log into github again, and other stuff that suggests cookies in LXDE are handled in a separate sandbox from Budgie (probably GNOME keyring related).
+
+also, Budgie didn't pester me about the keyring at all, not sure if that's just 
+
 ## to try
 
 - cinnamon. what's the perf like? better/same as budgie?
@@ -96,7 +102,9 @@ lxde is way faster - none of the lag I was seeing with Budgie. However, none of 
   - `usermod -Ga wireshark stuart`?
   - why is the wireshark group missing, need to reread that page
 - .face, GECOS
-- fix audio
+- continue fixing audio for headphones maybe
+  - write console-command-based instructions for fixing audio?
+  - also maybe this should be fixed upstream like hey just maybe?
 - remove password protection circa gnome keyring
 - do the touch sensitivity thing from the alarm wiki page
 - keep plugging away at that upstream kernel stuff
