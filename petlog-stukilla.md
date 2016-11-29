@@ -56,6 +56,30 @@ anyway that stupid typo made it so the ENTIRE LOGIN MANAGER COULD NOT START so t
 
 ok so then I edited the file so that it has that now, but now guess what? IT DOES NOTHING AND I STILL HAVE CLICKS TRIGGERING PASTE IF I PUSH THE WRONG PART OF THE PAD FML
 
+fixing the sound per the instructions on https://archlinuxarm.org/platforms/armv7/samsung/samsung-chromebook, switched the selected card from PulseAudio (instructions didn't mention that bit), arrowed right by like fifty screens until I found these items, which I unmuted (and a few I skipped, marked with [Off]):
+
+- Left Speaker Mixer LINEA
+- Left Speaker Mixer LINEB
+- Left Speaker Mixer Left DAC
+- Left Speaker Mixer MIC1 [Off]
+- Left Speaker Mixer MIC2 [Off]
+- Left Speaker Mixer Right DAC
+
+a whole bunch more skipping:
+
+- Right Speaker Mixer LINEA
+- Right Speaker Mixer LINEB
+- Right Speaker Mixer Left DAC
+- Right Speaker Mixer MIC1 [Off]
+- Right Speaker Mixer MIC2 [Off]
+- Right Speaker Mixer Right DAC
+
+AFAICT from testing only one of these (any of them) per speaker needs to be enabled for sound to come out? not sure how it all adds up but whatever
+
+this will probably have to be repeated for headphones
+
+didn't have to do the part where I change the master volume, I think desktop environments take care of that
+
 ## todo
 
 - **at least change the root password my god** (if it's safe it should get disabled altogether)
