@@ -1,5 +1,11 @@
 # installing arch linux on a chromebook
 
+- this is a bulleted list
+  - it keeps Gist from auto-detecting my space size as 8 due to the xorg conf below
+  - really though I should just fix that conf's indentation
+  - I don't think that'd hurt recopying it. does xorg require tabs like a chump?
+  - I'm pretty sure that's just makefiles
+
 ## uuuuuuugh
 
 followed the pretty straightforward instructions to put the alarm image on an sd card from chrome
@@ -123,7 +129,8 @@ note the bool options being set to `true` by not specifying a parameter because 
   - write console-command-based instructions for fixing audio?
   - also maybe this should be fixed upstream like hey just maybe?
 - remove password protection circa gnome keyring
-- do the touch sensitivity thing from the alarm wiki page
+- make touchpad scrolling smooth like cros instead of a janky wheel-analogue like it is right now?
+  - do the touch sensitivity thing from the alarm wiki page
 - keep plugging away at that upstream kernel stuff
 - rewrite the mess that is the current documentation for doing this, link to Google upstream docs
 - fix touchpad having a "right button" region (setting)
@@ -141,6 +148,7 @@ note the bool options being set to `true` by not specifying a parameter because 
   - also if this was fixed upstream why is it like this here
 - either enable netmanager or get a tray icon for netctl
 - add emulators and other computer game crap like that even though this is supposed to be a dedicated machine for hacking
+- codify what a petlog is and write an explainer of why you should do it every time you install linux (tldr, you're going to be writing a pleading forum post at some point, and having what you did to "cause" your problem is going to go a long way toward making every Linux forum's assholes slightly more shut the hell up)
 
 ## sexy exciting ideas
 
@@ -160,10 +168,18 @@ no, wait, that is, in fact, supposed to be the default behavior (see `man sudoer
 
 apparently this? https://github.com/archlinuxarm/PKGBUILDs/tree/master/aur
 
-## to answer
+### why is my video performance so bad?
 
-- is there any way to speed this up a little? maybe make the video a little less sluggish? hardware acceleration?
 - should I install xf86-video-armsoc-chromium? is there more graphics driver coverage I'm missing here?
+  - i appear to already have this package, so that's not the problem
 - what's up with mesa-vdpau being AUR only here?
-- why are hangouts windows not having the hangouts icon in the budgie panel? what's it going to take to fix this?
-- why does the panel keep disappearing when I (accidetally) hit alt+F2?
+
+### why do Chromium xtension &c windows have Chromium icons instead of the extension etc's icon?
+
+ie hangouts windows not having the hangouts icon in panel
+
+also: what's it going to take to fix this?
+
+### why does the budgie panel keep disappearing when I (accidetally) hit alt+F2?
+
+most likely answer based on having used it for three days: because budgie is bad
