@@ -88,7 +88,7 @@ youtube isn't buttery smooth - a little stuttering, tearing - but it's not unwat
 
 oh yeah, also, this is weird: had to log into github again, and other stuff that suggests cookies in LXDE are handled in a separate sandbox from Budgie (probably GNOME keyring related).
 
-also, Budgie didn't pester me about the keyring at all, not sure if that's just 
+also, Budgie didn't pester me about the keyring at all, not sure if that's just because I didn't do anything that would have triggered it or if it's because the problem magically fixed itself 
 
 ## to try
 
