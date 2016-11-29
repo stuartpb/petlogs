@@ -123,6 +123,7 @@ also, Budgie didn't pester me about the keyring at all, not sure if that's just 
   - where's the panel/applets/budgie-menu/com.solus-project.budgie-menu.gschema.xml he mentioned patching installed to, is it world-writable / not package managed
   - also if this was fixed upstream why is it like this here
 - either enable netmanager or get a tray icon for netctl
+- add emulators and other computer game crap like that even though this is supposed to be a dedicated machine for hacking
 
 ## asked questions
 
