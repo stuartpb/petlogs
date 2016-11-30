@@ -116,6 +116,8 @@ installed wireshark a while ago, added stuart to wireshark group (per https://wi
 
 downloaded my github profile image as ~/.face
 
+changed LXDE clock to use `%-I:%M %p` as time format
+
 ## to try
 
 - cinnamon. what's the perf like? better/same as budgie?
