@@ -75,7 +75,7 @@ add `iommu=pt` to kernel opts because for some reason everything USB fails witho
 - derp
 - `curl aur.sh`
 - works now, I guess that first `systemctl start dhcpcd.service` must have finished
-- ¯\_(ツ)_/¯
+- ¯\\\_(ツ)_/¯
 
 ### painful attempts to install packer
 
