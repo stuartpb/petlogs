@@ -152,6 +152,7 @@ maybe even just a bash script with nano and inotify or something
   - that'll work for now (done), but the other options via these GUIs don't make a conf file. how do they do their thing? is there a way I can hack `"ClickMethod" "fingers"` (https://wiki.archlinux.org/index.php/Libinput#Common_options) into whatever it is that they rather use?
   - see above notes about how this is apparently some kind of DE-specific thing, and if I want something that'll carry over to other ones, I'll need to pop it in Xorg, so whatever (though also it seems like I'd have to learn that approach ANYWAY since Budgie didn't take the changes in the xorg conf). Though it'd still be cool to have this somewhere in .config instead of /etc maybe
 - make touchpad scrolling smooth like cros instead of a janky wheel-analogue like it is right now?
+  - Actually I think the jankiness is just an artifact of lag from the non-compositing draw stuff
 - do the touch sensitivity thing from the alarm wiki page
   - pretty sure that's actually a legacy thing from the synaptics input driver that's no longer relevant today
 
