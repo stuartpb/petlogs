@@ -171,12 +171,15 @@ What I want is a way to make it so every DE can have a single applet for network
 - **screw with some kind of systemd rule or whatever so that what just happened never happens again** - disable the power button altogether if that's what it takes, but ideally I'd have CrOS's behavior back: tapping the button starts a fade-and-zoom, holding it to completion logs me out (I think they technically ripped this off from OSX but I don't care, it's good)
 - lid suspend? (don't think I actually want this generally speaking but it'd be nice to be ready for it)
 
+see https://wiki.archlinux.org/index.php/Chrome_OS_devices#Ignore_using_logind for changing this stuff
+
 ## asked questions
 
 ### why is my video performance so bad?
 
 - should I install xf86-video-armsoc-chromium? is there more graphics driver coverage I'm missing here?
   - i appear to already have this package, so that's not the problem
+- should I maybe replace it with xf86-video-armsoc-git?
 - what's up with mesa-vdpau being AUR only here?
 
 Just noticed Guake was translucent over windows in Budgie, only translucent over desktop in LXDE. Score another point for the "Budgie was probably compositing in software" hypothesis.
