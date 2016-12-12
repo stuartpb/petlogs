@@ -236,3 +236,5 @@ error: command failed to execute correctly
 ```
 
 probably because it removes it first, idk
+
+moving to rtl8812au_rtl8821au-dkms-git fixed it so whatever
