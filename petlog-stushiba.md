@@ -218,4 +218,4 @@ got everything updated and installed some stuff (that new package that makes ste
 
 wifi adapter kernel module is somehow broken again roflofloflasdgf;;;;;, went over and grabbed my ethernet cable and plugged in
 
-searching for what's up... not really sure but I think I might pivot on over to https://aur.archlinux.org/packages/rtl8812au_rtl8821au-dkms-git/ which looks a lot more actively maintained
+searching for what's up (googling "rtl8812 arch")... not really sure but I think I might pivot on over to https://aur.archlinux.org/packages/rtl8812au_rtl8821au-dkms-git/ which looks a lot more actively maintained
