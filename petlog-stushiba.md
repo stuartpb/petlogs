@@ -207,3 +207,15 @@ for p in ${@##-*}; do cd "$d"; curl "https://aur.archlinux.org/cgit/aur.git/snap
   - mesa-vdpau
   - libva-vdpau-driver
 - installed obs-studio
+
+## updated 2016-12-11
+
+booted back into Linux because Steam on Windows is being horrible (1-byte-per-second disk write times) and Windows Update is hung and I think I just need to let that disk cool off a bit and I should check out what's new Linux-side.
+
+I haven't touched this since probably September (going by my Tabalanches), so I ran a BIG HONKING STINKING HUGE 500+ PACKAGE `packer -Syu`, it required some geoclue magic and the ttf-dejavu force that's listed on the Arch frontpage right now.
+
+got everything updated and installed some stuff (that new package that makes steam native runtime work correctly, *finally* installed `bash-completion`), rebooted.
+
+wifi adapter kernel module is somehow broken again roflofloflasdgf;;;;;, went over and grabbed my ethernet cable and plugged in
+
+searching for what's up... not really sure but I think I might pivot on over to https://aur.archlinux.org/packages/rtl8812au_rtl8821au-dkms-git/ which looks a lot more actively maintained
