@@ -22,6 +22,10 @@ Moreover, *no* forensically-derived analysis of a system's history is going to b
 
 For this reason, petlogs are always kept on a reliable system *outside of* the one being journaled, ie. in the cloud.
 
+## Why keep a single repository?
+
+I originally maintained each of these logs in separate Gists; however, having them all in one repository makes it easier to cross-reference approaches that were used in other systems when taking the same actions on another one, and also makes it easier to keep all the logs, for reference, in the same sort of layout (ie. adding frontmatter to all the logs at once in one commit).
+
 ## Tags in use
 
 ### cloud
