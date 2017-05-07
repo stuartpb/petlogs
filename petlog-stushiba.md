@@ -292,3 +292,11 @@ Packages (88) dleyna-connector-dbus-0.2.0-2  dleyna-core-0.5.0-1  faac-1.28-5
 ```
 
 still some stuff I wasn't sure I wanted to ditch riding along here, so I looked into it and found that I'd missed [a brief window where xfce4-mixer had been replaced by xfce4-pulseaudio-plugin](https://bugs.archlinux.org/task/52686), so I installed that and uninstalled xfce4-mixer, and then `sudo pacman -Rsc gstreamer0.10` was basically fine
+
+## 2017-05-06
+
+Somehow I only installed SSH (as in the `openssh` package) **today**, whaaaaaaaa
+
+I am just **stunned** I hadn't done that yet. I kinda thought it was part of the ARch bas install, but I guess that's just libssh
+
+I might generate some keys for this so I can get on GitHub, but I don't know, I'm kinda tired, maybe tomorrow
