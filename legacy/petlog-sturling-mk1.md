@@ -153,5 +153,3 @@ tags: [portable, x64, archlinux]
 
 -  /usr/share/applications/transmission-qt.desktop Exec line patched manually (%F -> %U) to fix magnet link opening
   - fixed December 2012, see https://bugs.archlinux.org/task/29909?opened=12873&status%5B0%5D= for history / upstream link
-
-
