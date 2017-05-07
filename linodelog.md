@@ -1,3 +1,7 @@
+---
+tags: [cloud, linode, archlinux]
+---
+
 EVERYTHING from when I started the system image!
 
 - Ran pacman -Syu (after noticing pacman -S systemd was failing due to the record being out of date).

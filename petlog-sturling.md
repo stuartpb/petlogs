@@ -1,3 +1,7 @@
+---
+tags: [portable, x64, archlinux]
+---
+
 # sturling creation procedure 2015-01-20
 
 ## from stushiba

@@ -1,3 +1,7 @@
+---
+tags: [portable, x64, archlinux]
+---
+
 # sturling local changes
 
 (This doesn't list installed packages: you can use "pacman -Qq" for that.)

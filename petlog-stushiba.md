@@ -1,3 +1,7 @@
+---
+tags: [desktop, x64, archlinux]
+---
+
 # From installation media
 
 closely following https://wiki.archlinux.org/index.php/Beginners%27_guide

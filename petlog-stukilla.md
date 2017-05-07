@@ -1,3 +1,7 @@
+---
+tags: [chromebook, arm, archlinux]
+---
+
 # installing arch linux on a chromebook
 
 ## uuuuuuugh
@@ -88,7 +92,7 @@ youtube isn't buttery smooth - a little stuttering, tearing - but it's not unwat
 
 oh yeah, also, this is weird: had to log into github again, and other stuff that suggests cookies in LXDE are handled in a separate sandbox from Budgie (probably GNOME keyring related).
 
-also, Budgie didn't pester me about the keyring at all, not sure if that's just because I didn't do anything that would have triggered it or if it's because the problem magically fixed itself 
+also, Budgie didn't pester me about the keyring at all, not sure if that's just because I didn't do anything that would have triggered it or if it's because the problem magically fixed itself
 
 D'OH, I hit the power button trying to restert the X server with ctrl+alt+backspace. well, upshot is that now I have the fully-reloaded version of my touchpad configuration loaded up. for posterity, `cat /etc/X11/xorg.conf.d/30-touchpad.conf`:
 
@@ -189,9 +193,9 @@ Just noticed Guake was translucent over windows in Budgie, only translucent over
 - continue fixing audio for headphones maybe
   - write console-command-based instructions for fixing audio?
   - also maybe this should be fixed upstream like hey just maybe?
-  
+
 just like Managing Wifi, LXDE has a panel widget for volume, but it has a REALLY ugly icon, and right-clicking it and picking '"Volume Control" Settings' brings up alsamixer in LXTerminal, which is REALLY weird. Aren't there better solutions? At least an actual graphical mixer I could use instead of alsamixer? Maybe a dedicated tray icon app (ugh)?
-  
+
 ### why is packer prompting me for a password to sudo something when `sudo -l` says I have NOPASSWD permissions?
 
 this should get posted on stackoverflow, but essentially: it's probably because sudo is being evaluated in the context of `root`, and not the original user, and `root` isn't in `wheel`, and as such matches the `root ALL=(ALL) ALL` rule, which doesn't have nopasswd. not sure if this is worth fixing, I mean, probably? prompting root for their own password when they *already have root permissions* seems a little silly (is there a way to tell sudo "any user is allowed to sudo themselves without a password"?)

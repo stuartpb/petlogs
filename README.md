@@ -21,3 +21,33 @@ Sure, you *could* just `less .bashhistory`, but that doesn't tell you:
 Moreover, *no* forensically-derived analysis of a system's history is going to be of any use if the system has wedged itself into a state where such forensics would be inaccessible, ie. if you ran a command that corrupted your superblock.
 
 For this reason, petlogs are always kept on a reliable system *outside of* the one being journaled, ie. in the cloud.
+
+## Tags in use
+
+### cloud
+
+System running as a cloud virtual machine instance, eg. a DigitalOcean droplet.
+
+### portable
+
+System running on some kind of removable media (usually a MicroSD card in a USB reader) for use on multiple machines.
+
+### desktop
+
+System running against a single, fixed set of hardware, usually off of a physically-mounter hard drive.
+
+### chromebook
+
+System running on a reflashed Chromebook.
+
+### archlinux
+
+System running Arch Linux.
+
+### x64
+
+System for x86_64 / AMD64 architecture.
+
+### arm
+
+System for ARM architecture.
