@@ -177,6 +177,33 @@ What I want is a way to make it so every DE can have a single applet for network
 
 see https://wiki.archlinux.org/index.php/Chrome_OS_devices#Ignore_using_logind for changing this stuff
 
+I'm doing this now. Just ran a `sudo pacman -Syu` (with the appropriate workaround for that pain-in-the-ass certificates bug thing), then I tried installing `gnome-tweak-tool` and running that, but it ran into this error, probably due to some kind of kernel mismatch or something:
+
+```
+Traceback (most recent call last):
+  File "/usr/bin/gnome-tweak-tool", line 79, in <module>
+    from gtweak.app import GnomeTweakTool
+  File "/usr/lib/python2.7/site-packages/gtweak/app.py", line 25, in <module>
+    from gtweak.tweakmodel import TweakModel
+  File "/usr/lib/python2.7/site-packages/gtweak/tweakmodel.py", line 23, in <module>
+    from gtweak.utils import SchemaList, LogoutNotification, Notification
+  File "/usr/lib/python2.7/site-packages/gtweak/utils.py", line 20, in <module>
+    import tempfile
+  File "/usr/lib/python2.7/tempfile.py", line 35, in <module>
+    from random import Random as _Random
+  File "/usr/lib/python2.7/random.py", line 885, in <module>
+    _inst = Random()
+  File "/usr/lib/python2.7/random.py", line 97, in __init__
+    self.seed(x)
+  File "/usr/lib/python2.7/random.py", line 113, in seed
+    a = long(_hexlify(_urandom(2500)), 16)
+OSError: [Errno 38] Function not implemented
+```
+
+so I'm just going to follow the "Ignore using logind" changes
+
+Hmm, trying to restart it, it looks like there's no unit file? WTF?
+
 ## asked questions
 
 ### why is my video performance so bad?
