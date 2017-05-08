@@ -19,3 +19,7 @@ Might have enabled some other access methods, can't recall off the top of my hea
 Found a recommendation to update via `sudo apt update` and `sudo apt full-upgrade` so I did that
 
 Noticed the preinstalled Node is an ancient 0.10.x, so per https://nodered.org/docs/hardware/raspberrypi I'm running `update-nodejs-and-nodered` - looks like this might take a while
+
+Okay, it took about 5 and a half minutes, not too bad
+
+Now I'm setting up a keypair for the device with `ssh-keygen -t rsa -b 4096` and adding stushiba's new keypair to `~/.ssh/authorized_keys`
