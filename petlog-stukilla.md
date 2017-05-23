@@ -122,6 +122,18 @@ downloaded my github profile image as ~/.face
 
 changed LXDE clock to use `%-I:%M %p` as time format
 
+## 2017-05-23
+
+`sudo pacman -Syu`, which [has caused a problem](https://archlinuxarm.org/forum/viewtopic.php?f=60&t=11670) (see https://github.com/justmoon/node-bignum/issues/98)
+
+installed bluez-utils, enabled bluetooth.service
+
+installed blueman
+
+paired with stuffed elephant
+
+## NEW ENTRIES GO HERE
+
 ## to try
 
 - cinnamon. what's the perf like? better/same as budgie?
