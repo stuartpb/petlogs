@@ -132,6 +132,14 @@ installed blueman
 
 paired with stuffed elephant
 
+refiddled with all that stuff mentioned around when I originally enabled speakers
+
+installed pavucontrol which I really should have done much earlier
+
+also installed bluez-firmware even though I'm pretty sure that doesn't do anything
+
+followed the directions in https://wiki.archlinux.org/index.php/Bluetooth_headset#Headset_via_Bluez5.2FPulseAudio in pavucontrol, reloaded the chrome tab I was experimenting with, and got it to work
+
 ## NEW ENTRIES GO HERE
 
 ## to try
