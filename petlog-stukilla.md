@@ -140,6 +140,8 @@ also installed bluez-firmware even though I'm pretty sure that doesn't do anythi
 
 followed the directions in https://wiki.archlinux.org/index.php/Bluetooth_headset#Headset_via_Bluez5.2FPulseAudio in pavucontrol, reloaded the chrome tab I was experimenting with, and got it to work
 
+installed firefox, festival, espeak, speech-dispatcher, sox, libmad, opusfile
+
 ## NEW ENTRIES GO HERE
 
 ## to try
