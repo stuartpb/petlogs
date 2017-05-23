@@ -132,7 +132,7 @@ installed blueman
 
 paired with stuffed elephant
 
-refiddled with all that stuff mentioned around when I originally enabled speakers
+refiddled with all that stuff mentioned around when I originally enabled speakers (somehow they'd re-muted), plus a bunch of of other channels I also unmuted that sounded like they might matter
 
 installed pavucontrol which I really should have done much earlier
 
