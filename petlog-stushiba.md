@@ -310,3 +310,17 @@ I might generate some keys for this so I can get on GitHub, but I don't know, I'
 I got kind of fed up with emoji and CJK characters not displaying, so I did a `sudo pacman -S --needed noto-fonts noto-fonts emoji noto-fonts-cjk` (turns out they were *all* yet-to-be-installed so the `needed` was superfluous), and then the system hung for *minutes* (I went downstairs and did laundry, so I don't know how many minutes, but it was probably somewhere between 5 and 15) - popping over to tty3 or whatever (ctrl-alt-f3) and running `top` showed that it was children of `gnome-session-b` (like `gsd-xrandr`, `gsd-color` etc) getting pegged, one after the other (probably propagating the font updates).
 
 Anyway I think I'll do a `ssh-keygen -t rsa -b 4096` now
+
+## 2017-06-07
+
+Running `packer -Syu`, I encountered this:
+
+```
+:: Running post-transaction hooks...
+( 1/15) Install DKMS modules
+==> dkms install rtl8812au_rtl8821au/4.3.20.r16.d716b38 -k 4.11.3-1-ARCH
+Error! Bad return status for module build on kernel: 4.11.3-1-ARCH (x86_64)
+Consult /var/lib/dkms/rtl8812au_rtl8821au/4.3.20.r16.d716b38/build/make.log for more information.
+```
+
+https://aur.archlinux.org/packages/rtl8812au_rtl8821au-dkms-git/ shows a lot of people complaining about issues following a change to the kernel headers - looking into it, there appear to be [even more changes in upcoming kernels](https://github.com/Grawp/rtl8812au_rtl8821au/pull/43/files), and the maintainer is out to lunch or something and not incorporating them, so I'm going to switch back to https://aur.archlinux.org/packages/rtl8812au-dkms-git/ which appears to be seeing regular maintenance again
