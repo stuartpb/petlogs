@@ -226,6 +226,10 @@ so I'm just going to follow the "Ignore using logind" changes
 
 Hmm, trying to restart it, it looks like there's no unit file? WTF?
 
+## 2017-09-19
+
+switched gnome terminal to dark theme
+
 ## asked questions
 
 ### why is my video performance so bad?
