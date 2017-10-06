@@ -230,6 +230,10 @@ Hmm, trying to restart it, it looks like there's no unit file? WTF?
 
 switched gnome terminal to dark theme
 
+## 2017-10-06
+
+uninstalled packer and installed apacman, which is kept up to date and wouldn't conflict with packer-io, installed apacman-deps, apacman-utils, pkgfile, and rsync
+
 ## asked questions
 
 ### why is my video performance so bad?
