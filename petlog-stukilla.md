@@ -234,6 +234,18 @@ switched gnome terminal to dark theme
 
 uninstalled packer and installed apacman, which is kept up to date and wouldn't conflict with packer-io, installed apacman-deps, apacman-utils, pkgfile, and rsync
 
+## 2017-11-07: the quest for lid stuff
+
+I want to do some fancy stuff like "just turning the screen off when the lid is closed" (and maybe introducing some kind of audio alert when the system is unplugged), so I'm looking into how to read lid state
+
+stuff like https://unix.stackexchange.com/questions/148197/determine-status-of-laptop-lid suggests there should be a tree to read under /proc/acpi, but there isn't
+
+running `ls -l /usr/lib/modules/$(uname -r)/kernel/drivers/acpi` as mentioned at https://wiki.archlinux.org/index.php/ACPI_modules failed with that entire `acpi` directory not existing
+
+installed evtest based on https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=854388 and I can definitely see the information about the lid when I look at `gpio-keys.7`
+
+welp, this sucks, but it's where I ended up: https://unix.stackexchange.com/questions/244767/sysfs-alternative-to-proc-acpi-button-lid-lid-state/403171#403171
+
 ## asked questions
 
 ### why is my video performance so bad?
