@@ -274,6 +274,16 @@ I even ran through and retried this for every pin from 8 to 13 via `PIN=8; sudo 
 
 OK, so by doing `for pinctrl in /proc/device-tree/pinctrl@*; do dtc -I fs -O dts $pinctrl -f; done | less '+/phandle = <0x8>;' -j.5` I was able to figure out that the device would be labeled gpx3, and by doing `grep -l gpx3 /sys/class/gpio/gpiochip*/label`, I got that the device is gpiochip156, but trying PIN values like 156 and 161 via my test script above, the initial echo to `export` failed with `write error: Device or resource busy`, so I'm guessing there's some kind of exclusive-mode thing there. What a dead end waste of time.
 
+### whatever ugh
+
+Going ahead and installing + enabling acpid:
+
+`sudo pacman -S acpid && sudo systemctl enable acpid && sudo systemctl start acpid`
+
+UGH, it only has an event for when the power key goes down, not up, that's insufficient for what I need
+
+anyway I could go ahead and configure this to set the display brightness to 0 when closed (xsetting dpms is overkill imo), but I'm kind of worn out from all this and am just going to cut it here
+
 ## asked questions
 
 ### why is my video performance so bad?
