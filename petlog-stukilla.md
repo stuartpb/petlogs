@@ -270,7 +270,9 @@ the [gpio-keys][dt-docs-1] and [gpio][dt-docs-2] docs don't help me understand m
 [dt-docs-1]: https://github.com/torvalds/linux/blob/master/Documentation/devicetree/bindings/input/gpio-keys.txt
 [dt-docs-2]: https://github.com/torvalds/linux/blob/master/Documentation/devicetree/bindings/gpio/gpio.txt
 
-I even ran through and retried this for every pin from 8 to 13 via `PIN=8; sudo bash -c "echo $PIN > /sys/class/gpio/export"; cat /sys/class/gpio/gpio$PIN/value; sleep 5; cat /sys/class/gpio/gpio$PIN/value; sudo bash -c "echo $PIN > /sys/class/gpio/unexport"` etc, closing the lid during the sleep, and no change
+I even ran through and retried this for every pin from 8 to 13 via `PIN=8; sudo bash -c "echo $PIN > /sys/class/gpio/export" && cat /sys/class/gpio/gpio$PIN/value && sleep 5 && cat /sys/class/gpio/gpio$PIN/value && sudo bash -c "echo $PIN > /sys/class/gpio/unexport"` etc, closing the lid during the sleep, and no change
+
+OK, so by doing `for pinctrl in /proc/device-tree/pinctrl@*; do dtc -I fs -O dts $pinctrl -f; done | less '+/phandle = <0x8>;' -j.5` I was able to figure out that the device would be labeled gpx3, and by doing `grep -l gpx3 /sys/class/gpio/gpiochip*/label`, I got that the device is gpiochip156, but trying PIN values like 156 and 161 via my test script above, the initial echo to `export` failed with `write error: Device or resource busy`, so I'm guessing there's some kind of exclusive-mode thing there. What a dead end waste of time.
 
 ## asked questions
 
