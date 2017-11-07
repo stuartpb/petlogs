@@ -246,6 +246,32 @@ installed evtest based on https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=8543
 
 welp, this sucks, but it's where I ended up: https://unix.stackexchange.com/questions/244767/sysfs-alternative-to-proc-acpi-button-lid-lid-state/403171#403171
 
+okay, diving into some more heavy nuts and bolts with https://unix.stackexchange.com/questions/265890/is-it-possible-to-get-the-information-for-a-device-tree-using-sys-of-a-running (lol hi @cirosantilli): installing `dtc` and running... well this doesn't tell me much I didn't already know:
+
+```
+[stuart@stukilla ~]$ dtc -I fs -O dts /proc/device-tree/gpio-keys/lid-switch/ -f
+<stdout>: ERROR (name_properties): "name" property in / is incorrect ("lid-switch" instead of base node name)
+Warning: Input tree has errors, output forced
+/dts-v1/;
+
+/ {
+	name = "lid-switch";
+	gpio-key,wakeup;
+	debounce-interval = <0x1>;
+	linux,code = <0x0>;
+	linux,input-type = <0x5>;
+	gpios = <0x8 0x5 0x1>;
+	label = "Lid";
+};
+```
+
+the [gpio-keys][dt-docs-1] and [gpio][dt-docs-2] docs don't help me understand much more from this. I thought it might mean something on gpiochip8, possibly gpio13 (gpio8 + 5, the second byte of gpios), but that doesn't appear to reflect the lid state
+
+[dt-docs-1]: https://github.com/torvalds/linux/blob/master/Documentation/devicetree/bindings/input/gpio-keys.txt
+[dt-docs-2]: https://github.com/torvalds/linux/blob/master/Documentation/devicetree/bindings/gpio/gpio.txt
+
+I even ran through and retried this for every pin from 8 to 13 via `PIN=8; sudo bash -c "echo $PIN > /sys/class/gpio/export"; cat /sys/class/gpio/gpio$PIN/value; sleep 5; cat /sys/class/gpio/gpio$PIN/value; sudo bash -c "echo $PIN > /sys/class/gpio/unexport"` etc, closing the lid during the sleep, and no change
+
 ## asked questions
 
 ### why is my video performance so bad?
