@@ -284,6 +284,10 @@ UGH, it only has an event for when the power key goes down, not up, that's insuf
 
 anyway I could go ahead and configure this to set the display brightness to 0 when closed (xsetting dpms is overkill imo), but I'm kind of worn out from all this and am just going to cut it here
 
+## 2017-11-09
+
+since it looks like xf86-video-armsoc-chromium has disappeared from repositories altogether, I uninstalled it in favor of xf86-video-armsoc-git, which still doesn't work (logging into Budgie, it's still excruciatingly slow)
+
 ## asked questions
 
 ### why is my video performance so bad?
