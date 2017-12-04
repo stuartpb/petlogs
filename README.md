@@ -10,10 +10,10 @@ Petlogs are journals of every change that's made to the running system, and *why
 
 ## Why keep petlogs?
 
-Sure, you *could* just `less .bashhistory`, but that doesn't tell you:
+Sure, you *could* just `less ~/.bash_history`, but that doesn't tell you:
 
-- how that command was arrived upon or what documentation recommended it
-- what it was trying to do
+- how a command was arrived upon or what documentation recommended it
+- why the command was run / what it was trying to do
 - what happened when the command was run
 - things that happened on other accounts / shells (or GUI configuration)
 - what was typed in a nano/vim/visudo session
