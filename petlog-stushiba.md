@@ -368,3 +368,19 @@ Jun 07 16:28:14 stushiba systemd-modules-load[3019]: Failed to lookup alias 'sg'
 ```
 
 and yeah the [most helpful Google result](https://forum.manjaro.org/t/systemd-modules-load-failed-to-load-alias-sg/16840) suggests this issue will go away after reboot
+
+## 2017-12-05
+
+I'm getting a wide and exciting variety of kernel panics on boot, sometimes it doesn't print anything, others it shows systemd crashing
+
+THANK GOD I KEEP THESE PETLOGS because now I get that it's probably something wrong with that module I built
+
+I'm going to restart, adding `modprobe.blacklist=8812au,8812au(0)` to the kernel command line in refind (the latter is what's printing in the "modules linked in" output)
+
+### even with the modprobe blacklist
+
+nope, still getting the same kinds of errors: Authentication Manager failing to run, blinking cursor and no output after the DRM reset...
+
+following https://wiki.archlinux.org/index.php/General_troubleshooting#Boot_problems
+
+UGH, even booting my recovery media had problems so... I don't know, I'm just going to try to boot into Windows.
