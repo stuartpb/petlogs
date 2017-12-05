@@ -304,6 +304,10 @@ I was worried about man pages but apparently man actually looks for man pages as
 
 having set all this up I ran `npm install -g nodemcu-tool`
 
+## 2017-12-04
+
+installed pip and did `pip install esptool --user`, which created and uses `~/.local`, and makes sense, so I'm redoing the `./npm-global` stuff I set up the other day to use `~/.local` instead
+
 ## asked questions
 
 ### why is my video performance so bad?
