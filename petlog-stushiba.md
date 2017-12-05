@@ -384,3 +384,15 @@ nope, still getting the same kinds of errors: Authentication Manager failing to 
 following https://wiki.archlinux.org/index.php/General_troubleshooting#Boot_problems
 
 UGH, even booting my recovery media had problems so... I don't know, I'm just going to try to boot into Windows.
+
+okay, even booting WINDOWS had errors, so maybe it's some kind of, like, register corruption, and I just have to completely do a cold start again
+
+trying again, booting with the modprobe blacklist... and it's the flashing cursor with no info again
+
+let's try going cold and trying windows again, just, eugh, whatever
+
+okay looking at https://www.kernel.org/doc/Documentation/admin-guide/kernel-parameters.txt it looks like the option is `module_blacklist`, not sure how that differs from the modprobe one but it'd make sense because I think this bad module might be baked in?
+
+okay I'm going to try rebooting again and this time I'm going to do `module_blacklist=8812au,8812au(0)`
+
+... I got a blinking cursor again. not sure if it's an error, but I've got fresh install media in place, so I'm just gonna reboot with that
