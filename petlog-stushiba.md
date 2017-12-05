@@ -396,3 +396,38 @@ okay looking at https://www.kernel.org/doc/Documentation/admin-guide/kernel-para
 okay I'm going to try rebooting again and this time I'm going to do `module_blacklist=8812au,8812au(0)`
 
 ... I got a blinking cursor again. not sure if it's an error, but I've got fresh install media in place, so I'm just gonna reboot with that
+
+### chrooting with the install media
+
+plugged in the ethernet cable
+
+dns isn't resolving no matter how much I run dhcpcd so I might as well just drop this into /etc/resolv.conf:
+
+```
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+```
+
+I think if I do that in the install environment it'll get layered into the chroot
+
+ok, running `pacman -Syu` now
+
+ran into a few key issues, running `pacman-key --refresh-keys`
+
+the pacman update looks like it worked OK but I want to refresh my AUR packages
+
+packer chokes when doing AUR stuff as root, and apacman has been removed from the AUR, so... `su stuart` I guess
+
+it looks like there is yet again some drama with the driver maintainer: https://aur.archlinux.org/packages/rtl8812au-dkms-git/
+
+it's taking forever compiling lesstif, so doing `pacman -S openmotif` per https://www.archlinux.org/todo/replace-lesstif-with-openmotif/
+
+### rebooting
+
+UUUUUUGH
+
+> Failed to start Load Kernel Modules.
+
+> Failed to mount /boot.
+
+screw this, I'll try again after kernel 4.15 hits honestly just because I want https://www.phoronix.com/scan.php?page=news_item&px=Linux-4.15-Non-Desktop-Quirk
