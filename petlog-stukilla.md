@@ -336,6 +336,12 @@ I... guess I'll skip the CuraEngine stuff since I don't have a profile and stuff
 
 setting defaults from a thread on Thingiverse (center origin, build area 227x148x150, top X/Y/Z/E speeds 2500/2500/200/300, 2 extruders)
 
+### stuff not working
+
+installing the GPX plugin in OctoPrint
+
+running `sudo usermod -aG uucp stuart` so I can connect to the serial ports
+
 ## asked questions
 
 ### why is my video performance so bad?
