@@ -344,6 +344,12 @@ running `sudo usermod -aG uucp stuart` so I can connect to the serial ports
 
 after doing those I had to open the GPX stuff in settings (failed with no gpx.ini), then log out and back in (reload the user permissions)
 
+got timeouts trying to connect with baud rates above 115200
+
+### working but weird
+
+selected "invert control" for the Z axis in the printer profile because up moved it down and vice versa
+
 ## asked questions
 
 ### why is my video performance so bad?
