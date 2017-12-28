@@ -342,6 +342,8 @@ installing the GPX plugin in OctoPrint
 
 running `sudo usermod -aG uucp stuart` so I can connect to the serial ports
 
+after doing those I had to open the GPX stuff in settings (failed with no gpx.ini), then log out and back in (reload the user permissions)
+
 ## asked questions
 
 ### why is my video performance so bad?
