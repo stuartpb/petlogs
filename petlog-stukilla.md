@@ -324,6 +324,18 @@ did the `mkdir ~/.octoprint` thing
 
 starting OctoPrint and controlling it from my desktop
 
+### octoprint setup
+
+skipping access control (this setup will be local)
+
+skipping connectivity check stuff (let it assume it's online)
+
+sure, enable blacklist whatever
+
+I... guess I'll skip the CuraEngine stuff since I don't have a profile and stuff
+
+setting defaults from a thread on Thingiverse (center origin, build area 227x148x150, top X/Y/Z/E speeds 2500/2500/200/300, 2 extruders)
+
 ## asked questions
 
 ### why is my video performance so bad?
