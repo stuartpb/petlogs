@@ -308,6 +308,22 @@ having set all this up I ran `npm install -g nodemcu-tool`
 
 installed pip and did `pip install esptool --user`, which created and uses `~/.local`, and makes sense, so I'm redoing the `./npm-global` stuff I set up the other day to use `~/.local` instead
 
+## 2017-12-27
+
+I want to try OctoPrint with my new Qidi Tech I 3D printer, and don't feel like messing with my RPi right now, so I'm using this instead
+
+following the directions from https://github.com/foosel/OctoPrint/wiki/Setup-on-a-Raspberry-Pi-running-Raspbian
+
+Cloned foosel's repo into `git`, then changed my mind and put it directly in my home dir (one less thing to differ from expected)
+
+Installing `python2-virtualenv` because that looks necessary
+
+ran the install script with the venv stuff
+
+did the `mkdir ~/.octoprint` thing
+
+starting OctoPrint and controlling it from my desktop
+
 ## asked questions
 
 ### why is my video performance so bad?
