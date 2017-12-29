@@ -55,3 +55,7 @@ System for x86_64 / AMD64 architecture.
 ### arm
 
 System for ARM architecture.
+
+### android
+
+System is an Android device (ie. a phone).
