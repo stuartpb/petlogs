@@ -4,7 +4,7 @@ tags: [android]
 
 # Stuixel, my new Pixel 2 XL
 
-ok so basically with this new phone I've already stated getting pretty wild with it right out of the gate, so I figure I should probably start keeping a petlog of everything I'm doing to it, since it is effectively a pet Linux box in my pocket
+ok so basically with this new phone I've already started getting pretty wild with it right out of the gate, so I figure I should probably start keeping a petlog of everything I'm doing to it, since it is effectively a pet Linux box in my pocket
 
 ## unboxed
 
@@ -27,3 +27,13 @@ I'm writing all this on the phone itself right now and it just hit 15% battery a
 okay so I knew I wanted a Git client and also knew I'd want ConnectBot for SSH, so I installed MGit and the latter via F-Droid and went through a whole bunch of different kerfluffles trying to make an identity in one and import it cleanly into the other (including an arduous `chown` of key files produced in Amaze to MGit's user, which somehow *still* had permission denied, uuuuugh). since afaict there's no way to use Amaze as a file picker in Oreo any more (ie. no way to escape sdcard) and ConnectBot doesn't let you change nicknames after importing and I kind of like ConnectBot's entropy feeder thing, I decided to go with CB producing a 4096-bit RSA key, then had MGit produce its *own* key (naming it `id_rsa`), then opening the files up in Amaze and overwriting the key contents with the keypair from ConnectBot.
 
 anyway I pasted the key into my GitHub account's authorized keys, cloned petlogs (into the default location because fuck it), and here we are
+
+## 2017-12-31
+
+I went and looked at the commits to petlogs I made from MGit and, hurr durr, checking "Autostage modified files" doesn't *add* files, so I had to go back and edit the commit... which MGit has no way to do. Enter Termux.
+
+I installed Termux and went into my phone's Settings (searched for "Termux") to grant it storage access, then installed Git and ran `git rebase -i HEAD~2` to go back and amend the commit.
+
+From here, I wanted to add my SSH keys that I'd set up to Termux; I did it by doing `touch ~/.ssh/id_rsa{,.pub}` as the Termux user, then catting the files from `/data/data/com.manichord.mgit` into those as superuser, so I didn't get any headaches around file ownership again. (`su` was inserting literal tabs under Termux, so I did this step in a ConnectBot local terminal.)
+
+anyway from there I was able to `git push -f` the fixed commit and now we're back in business.
