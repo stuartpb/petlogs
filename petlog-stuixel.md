@@ -61,3 +61,11 @@ I installed Termux and went into my phone's Settings (searched for "Termux") to 
 From here, I wanted to add my SSH keys that I'd set up to Termux; I did it by doing `touch ~/.ssh/id_rsa{,.pub}` as the Termux user, then catting the files from `/data/data/com.manichord.mgit` into those as superuser, so I didn't get any headaches around file ownership again. (`su` was inserting literal tabs under Termux, so I did this step in a ConnectBot local terminal.)
 
 anyway from there I was able to `git push -f` the fixed commit and now we're back in business.
+
+## 2018-02-01
+
+After the January update came out and wouldn't install to my phone (the installation failing every time, probably because I inadvertently hadn't checked the "preserve dm-verity" checkbox in Magisk), I managed to successively screw the system up more and more with botched attempts to make the problem go away until the system just altogether froze at boot.
+
+I fixed it by downloading the latest factory image and running [this script](https://forum.xda-developers.com/pixel-2-xl/development/tool-deuces-bootloop-recovery-flashing-t3704761), which made the problem go away.
+
+After that, since I already had the new `boot.img` extracted (and, even if I hadn't uninstalled Magisk in one of my botched recovery attempts, Deuce's script probably would have wiped it anyway), I ran it back through the Magisk patcher and re-ran the steps I did above to flash the patched boot image (running `fastboot --set-active=_b`, redoing it, and `fastboot --set-active=_a` again afterward for good measure).
