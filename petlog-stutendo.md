@@ -4,7 +4,7 @@ I hadn't been keeping a petlog for my Wintendo box, but it looks like that was a
 
 ## 2018-02-15
 
-Back in July, I guess I updated MSYS2, at which point I went through a weird "huh, apparently I never made an SSH key" phase and ended up generating a new key.
+I had updated MSYS2 in the past, and back in July, I went through a weird "huh, apparently I never made an SSH key" phase and ended up generating a new key. (This probably had something to do with accessing the installation on my Raspberry Pi.)
 
 Well, right now, I'm realizing why that happened: apparently, at some point, my home directory in MSYS2 moved from `C:\MinGW\msys\1.0\home\Stuart` to `C:\msys64\home\Stuart` (maybe if/when I switched from MSYS1 to MSYS2? the files in the former diretory have a modification date of 2014-08-06), and when *that* happened, the old home diretory's content (including the key) didn't carry over.
 
