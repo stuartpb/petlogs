@@ -17,7 +17,7 @@ Since I appear to have added the *newer* key to my GitHub credentials (and I thi
 Credit to this one-liner, which I used to figure out which key I had loaded into the Chrome Secure Shell app, which put me on track to realizing what had happened here (I'd generated that private key, been using it via Chrome SSH, and forgotten its location):
 
 ```js
-fileSystem.root.getFile('/.ssh/id_rsa',{},fe=>fe.file(file=>{let fr = new FileReader(); fr.onloadend = e=>console.log(e.target.result); fr.readAsText(file)}));
+nassh.getFileSystem(fs=>fs.root.getFile('/.ssh/id_rsa',{},fe=>fe.file(file=>{let fr = new FileReader(); fr.onloadend = e=>console.log(e.target.result); fr.readAsText(file)}),console.error))
 ```
 
 (I am constantly thankful that this abysmally clunky Filesystem API never caught on outside of Chrome.)
