@@ -25,3 +25,7 @@ nassh.getFileSystem(fs=>fs.root.getFile('/.ssh/id_rsa',{},fe=>fe.file(file=>{let
 From there, I copy-pasted the private key as a file called `key` in my MSYS2 home directory, then ran `ssh-keygen -yf key | ssh-keygen -E md5 -lf -` to get the key's fingerprint to compare it with the fingerprints of my other keys on GitHub (to ascertain that I hadn't, in fact, uploaded the old key).
 
 Whew: this answers one of my long-standing confused questions, and has me more gung-ho to start populating https://github.com/stuartpb/pubkeys.
+
+## 2018-02-20
+
+Taking care of the Plushu sandbox migration described in https://github.com/plushu/sandbox.plushu.org/issues/2 - I'm using the MSYS2 SSH for this, and since I had to rebuild the server, I've changed the identity, and *that* means editing `~/.ssh/known_hosts`, and *that* means opening up an editor (I don't feel like puzzling out the appropriate in-place `sed` command), and apparently I don't have `nano` or `vi`, so I'm running `pacman -Syu` right now so I can install one or both of those (powering through `catgets` per the recommendation of https://github.com/StephanTLavavej/mingw-distro/blob/e4603e26554200e280376bf9f3b901276915953a/README.md).
