@@ -366,6 +366,28 @@ a thing I'm encountering now is where, half a second after blueman pops up, the 
 
 anyway the plane is descending so I'm just going to listen to Slow Burn and give up on this plan for now
 
+## 2018-03-13
+
+okay so a week ago I tried a `pacman -Syu` right before I had to leave for a meeting, which was a bad idea. I tried to have the update running with me with the lid closed in the car after all the packages were downloaded, but it appears that it went to sleep at some point
+
+when I tried to wake it up, it was installing boost
+
+anyway I'm too busy to recap right now but long story short I resolved the broken installation but wifi is still not working
+
+## 2018-06-14
+
+Got sick of wondering why stuff like wifi and dhcpcd were failing, so I decided to just do a full system overhaul with `sudo pacman -Sy && pacman -Qnq | sudo pacman -S -`
+
+I bought a USB ethernet adapter to work around the broken wifi problem but, as I mentioned, dhcpcd was failing (I feel like I pasted the manner in which it is failing somewhere I can't definitely remember), so I brought up the adapter with
+
+```bash
+sudo ip link set eth0 up
+sudo ip addr add 192.168.0.200/24 dev eth0
+sudo ip route add default via 192.168.0.1
+```
+
+I think this stuff may belong back in the previous section on how I (partially) recovered the broken installation so I'll probably move it later
+
 ## asked questions
 
 ### why is my video performance so bad?

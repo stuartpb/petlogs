@@ -10,17 +10,41 @@ ok so basically with this new phone I've already started getting pretty wild wit
 
 I unboxed the phone and all a couple days ago, thinking "oh I'm just going to root this with the stuff in the box, nbd". popped my old micro-SIM in and whoaaa derp, the cable it comes with is USB-C on both ends, and I don't have a freaking MacBook or Chromebook Pixel or Pixelbook or whatever the fuck would make that a reasonable option to adb/fastboot with it
 
-anyway I knew I was just going to blow the whole installation away when I unlocked the bootloader for Magisk and everything so I blew through the initial setup going "skip" as much as I could (even skipping the WiFi setup) so I could enable OEM unlocking and USB debugging and all that stuff there are like a billion tutorials on doing
+anyway I knew I was just going to blow the whole installation away when I unlocked the bootloader for Magisk and everything so I blew through the initial setup going "skip" as much as I could (even skipping the WiFi setup). After that, I enabled developer mode, OEM unlocking, and USB debugging, per steps 1 and 2 [here](https://android.gadgethacks.com/how-to/unlock-bootloader-your-pixel-2-pixel-2-xl-0180707/)
 
 let it sit on my desk for a few days as I hustled around trying to find an appropriate cable, it was soul-wretching and I don't really want to talk about it
 
 ## unlocking stuff
 
-TODO look through my terminal's scrollback and fill this in (see next paragraph)
+after finally being able to borrow a USB A - USB C cable (freaking Amazon sent me the wrong one and the Micro B - C adapters I bought didn't do data) and authorizing my computer for USB debugging on the phone, from my adb console:
+
+```
+adb reboot bootloader
+fastboot flashing unlock
+```
+
+I'd read about the Pixel 2 XL needing `fastboot flashing unlock_critical` as well, but that sounded risky and I wasn't sure I wanted to do it, so I skipped it this time and started going through setup on the phone normally. However, after giving it a little more thought (and realizing that even `fastboot flashing unlock` necessitates the little "this phone is rooted oh no" warning at startup that you can't remove), I decided to go back and wipe the phone again by unlocking that, too:
+
+```
+adb reboot bootloader
+fastboot flashing unlock_critical
+```
 
 ## actual live setup
 
-I'm writing all this on the phone itself right now and it just hit 15% battery and also it's 3 AM so I'm going to skip the whole pretty-standard setup and Magisk procedure for now (I'll come back and write it up in the morning) to get to the specifics of the ssh identity setup
+I plugged in the cable that transfers your data from one phone to another to my old phone, and I picked whatever the "transfer stuff" option was instead of "have a fresh start"; however, when the prompt came to actually pick *what I wanted to transfer from my old phone*, I decided I actually *did* want a fresh start (lots of stuff on my old phone was irrelevant stuff I never had the heart to remove), and figured "eh, whatever, I'll probably be able to transfer this stuff later when I decide I want it".
+
+(Later I looked this up and found out, nope, there's no way to bring this UI back after setup! smdh oh well)
+
+## installing Magisk
+
+Anyway, I wanted to install Magisk, and I didn't install any custom recovery or bootloader or anything, so after finishing all this setup stuff, downloading Magisk Manager, and re-enabling developer mode and USB debugging, I downloaded the stock image from https://developers.google.com/android/images for my phone and extracted the `boot.img`, transferred that over to the phone via MTP, ran whatever Magisk thing patches `boot.img` and transferred it back to my desktop via MTP as well, then went back into my adb console that I hadn't yet closed and ran:
+
+```
+adb reboot bootloader
+fastboot flash boot C:\Users\Stuart\Downloads\patched_boot.img
+fastboot reboot
+```
 
 ## setting up ssh
 
@@ -37,3 +61,11 @@ I installed Termux and went into my phone's Settings (searched for "Termux") to 
 From here, I wanted to add my SSH keys that I'd set up to Termux; I did it by doing `touch ~/.ssh/id_rsa{,.pub}` as the Termux user, then catting the files from `/data/data/com.manichord.mgit` into those as superuser, so I didn't get any headaches around file ownership again. (`su` was inserting literal tabs under Termux, so I did this step in a ConnectBot local terminal.)
 
 anyway from there I was able to `git push -f` the fixed commit and now we're back in business.
+
+## 2018-02-01
+
+After the January update came out and wouldn't install to my phone (the installation failing every time, probably because I inadvertently hadn't checked the "preserve dm-verity" checkbox in Magisk), I managed to successively screw the system up more and more with botched attempts to make the problem go away until, after flashing a factory image with outdated Android developer tools (which may or may not have been the problem), the system just altogether froze at boot.
+
+I fixed it by extracting the images from latest factory image's zip and running [this script](https://forum.xda-developers.com/pixel-2-xl/development/tool-deuces-bootloop-recovery-flashing-t3704761), which made the problem go away.
+
+After that, since I already had the new `boot.img` extracted (and, even if I hadn't uninstalled Magisk in one of my botched recovery attempts, Deuce's script probably would have wiped it anyway), I ran it back through the Magisk patcher and re-ran the steps I did above to flash the patched boot image (running `fastboot --set-active=_b`, redoing it, and `fastboot --set-active=_a` again afterward for good measure).
