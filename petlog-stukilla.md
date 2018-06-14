@@ -358,6 +358,20 @@ when I tried to wake it up, it was installing boost
 
 anyway I'm too busy to recap right now but long story short I resolved the broken installation but wifi is still not working
 
+## 2018-06-14
+
+Got sick of wondering why stuff like wifi and dhcpcd were failing, so I decided to just do a full system overhaul with `sudo pacman -Sy && pacman -Qnq | sudo pacman -S -`
+
+I bought a USB ethernet adapter to work around the broken wifi problem but, as I mentioned, dhcpcd was failing (I feel like I pasted the manner in which it is failing somewhere I can't definitely remember), so I brought up the adapter with
+
+```bash
+sudo ip link set eth0 up
+sudo ip addr add 192.168.0.200/24 dev eth0
+sudo ip route add default via 192.168.0.1
+```
+
+I think this stuff may belong back in the previous section on how I (partially) recovered the broken installation so I'll probably move it later
+
 ## asked questions
 
 ### why is my video performance so bad?
