@@ -374,9 +374,7 @@ when I tried to wake it up, it was installing boost
 
 anyway I'm too busy to recap right now but long story short I resolved the broken installation but wifi is still not working
 
-## 2018-06-14
-
-Got sick of wondering why stuff like wifi and dhcpcd were failing, so I decided to just do a full system overhaul with `sudo pacman -Sy && pacman -Qnq | sudo pacman -S -`
+### attempt to recap from memory three months later
 
 I bought a USB ethernet adapter to work around the broken wifi problem but, as I mentioned, dhcpcd was failing (I feel like I pasted the manner in which it is failing somewhere I can't definitely remember), so I brought up the adapter with
 
@@ -386,7 +384,32 @@ sudo ip addr add 192.168.0.200/24 dev eth0
 sudo ip route add default via 192.168.0.1
 ```
 
-I think this stuff may belong back in the previous section on how I (partially) recovered the broken installation so I'll probably move it later
+## 2018-06-14
+
+Got sick of wondering why stuff like wifi and dhcpcd were failing, so I decided to just do a full system overhaul with `sudo pacman -Sy && pacman -Qnq | sudo pacman -S -`
+
+Hit this error once everything downloaded:
+
+```
+(1039/1039) checking keys in keyring               [######################] 100%
+(1039/1039) checking package integrity             [######################] 100%
+(1039/1039) loading package files                  [######################] 100%
+(1039/1039) checking for file conflicts            [######################] 100%
+error: failed to commit transaction (conflicting files)
+js52: /usr/lib/libmozjs-52.so.0 exists in filesystem
+Errors occurred, no packages were upgraded.
+```
+
+ran `sudo rm /usr/lib/libmozjs-52.so.0` and retried
+
+looks like everything went through basically fine - this was the worst error message
+
+```
+warning: directory permissions differ on /var/lib/samba/private/
+filesystem: 755  package: 700
+```
+
+I can fix that in a bit, but for now I think it's worth powering down, unplugging the USB ethernet, and coming back up to see if the broken stuff works again.
 
 ## asked questions
 
