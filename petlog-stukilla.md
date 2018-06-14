@@ -308,6 +308,12 @@ having set all this up I ran `npm install -g nodemcu-tool`
 
 installed pip and did `pip install esptool --user`, which created and uses `~/.local`, and makes sense, so I'm redoing the `./npm-global` stuff I set up the other day to use `~/.local` instead
 
+## 2017-12-09
+
+omfg closing the lid WAKES THE SYSTEM FROM SUSPEND #fixme
+
+I think I'm going to change the default LXDE wallpaper
+
 ## 2017-12-27
 
 I want to try OctoPrint with my new Qidi Tech I 3D printer, and don't feel like messing with my RPi right now, so I'm using this instead
@@ -349,6 +355,16 @@ got timeouts trying to connect with baud rates above 115200
 ### working but weird
 
 selected "invert control" for the Z axis in the printer profile because up moved it down and vice versa
+
+## 2018-01-02
+
+I don't think I did enable bluettoth so long ago, just ran `sudo systemctl enable bluetooth.service` and it said it made the files. anyway I still had to start it explicitly
+
+anyway I added Stuixel by bluetooth
+
+a thing I'm encountering now is where, half a second after blueman pops up, the window goes away, and clicking the tray icon just makes the dock have a spin-arrow cursor. idk how to fix this, but the context menu still... kind of... works
+
+anyway the plane is descending so I'm just going to listen to Slow Burn and give up on this plan for now
 
 ## asked questions
 
