@@ -31,3 +31,57 @@ doing `rm 1` through `rm 11` to remove all partitions that aren't the EFI system
 realizing that moving a fat16 partition in parted [hasn't been possible for years](https://superuser.com/a/499804), *aaaaaargh*
 
 I've still got an EFI partition just sitting here in the middle of my partition table looking like an idiot
+
+### let's get ddangerous
+
+going into `fdisk` and doing `n 1 2048 +32767 t 1 1 w` to create a new EFI System partition at the first available aligned sector (the default when there are no partitions), of the same size as the existing one (32768 sectors)
+
+ran `dd conv=notrunc if=/dev/sda12 of=/dev/sda1 bs=1M` to copy the partition, then checked that the copy worked with `mount /dev/sda1 /mnt && ls /mnt && umount /mnt`
+
+`fdisk` again, hitting `x` to get into Expert Mode
+
+`n 1` to give the new partition the name `EFI-SYSTEM` just like the old one
+
+not copying the old UUID because why bother
+
+returning to basic mode with `r`
+
+doing `d 12` to delete the old EFI-SYSTEM partition that was in a weird place
+
+hitting `n` and just enter for the rest of the defaults to create an appropriate Linux partition out of the rest of the disk
+
+momentarily questioning if all this partition mucking about is worth it if I'm just going to order a cheap SSD to replace the stock flash anyway
+
+running `mkfs.ext4 /dev/sda2` (if I do end up buying a new SSD, I'll probably redo this with F2FS or btrfs, probably the latter because I'm obsessed with features like COW)
+
+only at this point, realizing that pacstrap can't use the local package store, do I run `wifi-menu`
+
+gonna pacstrap a dev environment with a (hopefully) nice wm as `pacstrap /mnt base base-devel budgie`
+
+### rote following of the guide
+
+running `genfstab -U /mnt >> /mnt/etc/fstab` and `arch-chroot /mnt` as perscribed in the guide
+
+running `ln -sf /usr/share/zoneinfo/America/Los_Angeles /etc/localtime` even though honestly I wish systems didn't have a concept of "local time" beyond the UI but whatever
+
+running `hwclock --systohc` even though it's not clear why that's necessary
+
+uncommenting `en_US.UTF-8 UTF-8` and running `locale-gen`
+
+also making an `/etc/locale.conf` with `LANG=en_US.UTF-8` in it
+
+`echo stukilla > /etc/hostname`
+
+honestly, not doing the "add an entry for your hostname as 127.0.1.1 in /etc/hosts" thing, life is too friggin' short
+
+### a little more setup for the GUI stuff
+
+`pacman -S lightdm lightdm-gtk-greeter && systemctl enable lightdm`
+
+### setting myself up
+
+uncommenting the "allow all members of wheel to sudo without a password" line via `EDITOR=nano visudo`
+
+`useradd -c "Stuart P. Bentley" -m -G wheel stuart && passwd stuart`
+
+okay let's see if this thing boots
