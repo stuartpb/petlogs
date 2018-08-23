@@ -6,7 +6,9 @@ tags: [chromebook, x64, archlinux]
 
 My mom's Acer C710 reached End of Support a couple months ago, so we went out and got her a new one, and I asked to keep the old one, so that I could have a Chromebook I could reflash to run Linux that *wasn't* a mess of unsupported proprietary chipsets like the old ARM Samsung Chromebook I'd tried to do this with before.
 
-## Right after getting the Chromebook
+## 2018-08-22
+
+### Right after getting the Chromebook
 
 Per the [upstream directions](https://www.chromium.org/chromium-os/developer-information-for-chrome-os-devices/acer-c7-chromebook), I Powerwashed the machine into Developer Mode by holding Escape and F3 (Refresh) while pressing the power button, then pressing CTRL+D.
 
@@ -18,7 +20,7 @@ Anyway, I logged into vt2, and at that point I'd already downloaded the [MrChrom
 
 I backed up the firmware to a flash drive I keep around for exactly this kind of hackery (0xdeadcab1e), flashed the lastest Arch Linux installation media to the flash drive I keep dedicated to this exact purpose (my "rescue penguin"), and rebooted by holding F3 (Refresh) and hitting the power button.
 
-## Installing Arch Linux
+### Installing Arch Linux
 
 Running down the [Installation Guide](https://wiki.archlinux.org/index.php/Installation_guide):
 
@@ -85,3 +87,13 @@ uncommenting the "allow all members of wheel to sudo without a password" line vi
 `useradd -c "Stuart P. Bentley" -m -G wheel stuart && passwd stuart`
 
 okay let's see if this thing boots
+
+## 2018-08-23
+
+Well whaddaya know, copying the leftover EFI-SYSTEM partition from Chrome OS doesn't count as establishing a bootloader for the new OS
+
+Looking at https://wiki.archlinux.org/index.php/EFISTUB, I'm going to try adding a boot entry for Arch directly:
+
+`efibootmgr --disk /dev/sda --part 2 --create --label "Arch Linux" --loader /vmlinuz-linux --unicode "root=$(blkid -o export /dev/sda2 | grep '^PARTUUID=') rw initrd=\\initramfs-linux.img" --verbose`
+
+Rebooted, and... still nothing.
