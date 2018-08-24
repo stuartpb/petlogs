@@ -115,3 +115,11 @@ Ugh, my ESP appears to have nothing in it, and there's no entry for `/boot` in `
 ### aaaaargh
 
 Okay, I moved everything around, and was finally able to boot from `vmlinuz-linux` using the UEFI Shell on the rescue media, but now I've got a crash on startup around `mei_me 0000:00:16.0: initialization failed.` I don't have time to deal with this right now
+
+## 2018-08-24
+
+It's becoming clear that trying to boot directly via EFISTUB is more trouble than it's worth (if it's even possible with this firmware at all), so I'm just going to chump out and install a bootloader.
+
+Reading the wiki, it seems like the simplest way to do this will be to use [systemd-boot](https://wiki.archlinux.org/index.php/Systemd-boot), so that's what I'm doing: booting back into rescue media, applying the mounts, `arch-chroot`ing into `/mnt`, and running `bootctl --path=/boot install`.
+
+Hmm, for some reason the only option that appears now is "Reboot Into Firmware Interface".
