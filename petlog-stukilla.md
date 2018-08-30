@@ -147,3 +147,11 @@ options root=$(blkid -o export /dev/sda2 | grep '^PARTUUID=')
 ```
 
 Having finished with all this, I exit the chroot and reboot. The loader appears to work properly, and I get the same problem I was experiencing before: Light Display Manager fails to start, and the `mei_me` module fails initialization.
+
+To diagnose what's going wrong with lightdm, I boot back into the rescue media: I note that the `mei_me` issue is apparent in startup there, too, and is probably unrelated.
+
+Looking at `/var/log/lightdm/lightdm.log`, it looks like it wasn't able to start an X server - I've probably got more packages I need to install. `wifi-menu` still doesn't work because `wpa_supplicant` isn't installed (d'oh), so I go back out of the chroot and redo `wifi-menu` there, re-chroot, `pacman -S wpa_supplicant`, and check that `wifi-menu` works now (it does).
+
+[This thread](https://bbs.archlinux.org/viewtopic.php?id=235006) reveals that, for some reason that is beyond me, desktop environment packages like `budgie-desktop` don't include `xorg-server` as a dependency, which is apparently required by lightdm / the GTK greeter. (Don't ask me why neither of *those* packages list xorg-server as a dependency, either.)
+
+On rebooting, everything *finally* works - just in time for me to order a replacement storage device for this machine and have to do all this over again.
