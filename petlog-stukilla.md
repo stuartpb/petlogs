@@ -123,3 +123,27 @@ It's becoming clear that trying to boot directly via EFISTUB is more trouble tha
 Reading the wiki, it seems like the simplest way to do this will be to use [systemd-boot](https://wiki.archlinux.org/index.php/Systemd-boot), so that's what I'm doing: booting back into rescue media, applying the mounts, `arch-chroot`ing into `/mnt`, and running `bootctl --path=/boot install`.
 
 Hmm, for some reason the only option that appears now is "Reboot Into Firmware Interface".
+
+## 2018-08-29
+
+Okay, now that I look at this a little more closely, apparently you're supposed to [configure](https://wiki.archlinux.org/index.php/systemd-boot#Configuration) systemd-boot after installing it, and the fact that I didn't do that is probably why this isn't working.
+
+I'm editing `/boot/loader/loader.conf`, and for some reason, the last line of the file is `default 4561e26e9f224e4aa22ef630e03b93b9-*`. After doing an `fgrep -sr 4561e26 /`, it comes to light that this value comes from `/etc/machine-id`, a file I'd never encountered before, documented [in systemd's manual](https://www.freedesktop.org/software/systemd/man/machine-id.html). After reading [the spec](https://github.com/systemd/systemd/blob/master/doc/BOOT_LOADER_SPECIFICATION.md) and thinking about it for a while, I *eventually* understand why this naming convention is in place (so that multiple OS instances, with each having multiple boot options, can be installed to the ESP without conflicts). I would expect that there'd be something built into the distro to handle this as part of its base, but it sounds like the Arch boot process is so fragmented that everybody is basically just rolling their own at this point.
+
+Before I mess with all this, I'm remembering that I ran into problems on 2018-8-23 with the Intel Management Engine module stuff, which might point to the need to include an initrd for Intel microcode as the Arch Wiki keeps imploring. I try to run `wifi-menu`, only for the system to tell me I need to install `dialog`. I exit the chroot and run `wifi-menu` from the outer shell (which has `dialog` and is fine), then `arch-chroot /mnt` again and run `pacman -S --asdeps dialog`.
+
+Now that I'm online and have set up the system to not have me locked out on boot, I run a quick `pacman -Syu` to bring the system back up to date, then move on to get the microcode package with `pacman -S intel-ucode`.
+
+Now that I've got all that, I create a config file by running the following multi-line command:
+
+```
+echo -n "title Arch Linux
+machine-id $(cat /etc/machine-id)
+efi /vmlinuz-linux
+options initrd=/intel-ucode.img
+options initrd=/initramfs-linux.img
+options root=$(blkid -o export /dev/sda2 | grep '^PARTUUID=')
+" > /boot/loader/entries/$(cat /etc/machine-id)-arch-local-default.conf
+```
+
+Having finished with all this, I exit the chroot and reboot. The loader appears to work properly, and I get the same problem I was experiencing before: Light Display Manager fails to start, and the `mei_me` module fails initialization.
