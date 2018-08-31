@@ -1,1 +1,5 @@
-tags: [cloud, linode, archlinux]
+hostname: stuvern
+distro: archlinux
+processor: x64
+chassis: vm
+cloud: linode

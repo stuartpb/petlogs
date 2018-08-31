@@ -1,1 +1,4 @@
-tags: [desktop, x64, archlinux]
+hostname: stushiba
+distro: archlinux
+processor: x64
+chassis: desktop

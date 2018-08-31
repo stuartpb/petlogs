@@ -26,36 +26,17 @@ For this reason, petlogs are always kept on a reliable system *outside of* the o
 
 I originally maintained each of these logs in separate Gists; however, having them all in one repository makes it easier to cross-reference approaches that were used in other systems when taking the same actions on another one, and also makes it easier to keep all the logs, for reference, in the same sort of layout (ie. adding frontmatter to all the logs at once in one commit).
 
-## Tags in use
+## Metadata format
 
-### cloud
+The `metadata.yaml` files for each machine contain some characteristic information about that system:
 
-System running as a cloud virtual machine instance, eg. a DigitalOcean droplet.
-
-### portable
-
-System running on some kind of removable media (usually a MicroSD card in a USB reader) for use on multiple machines.
-
-### desktop
-
-System running against a single, fixed set of hardware, usually off of a physically-mounter hard drive.
-
-### chromebook
-
-System running on a reflashed Chromebook.
-
-### archlinux
-
-System running Arch Linux.
-
-### x64
-
-System for x86_64 / AMD64 architecture.
-
-### arm
-
-System for ARM architecture.
-
-### android
-
-System is an Android device (ie. a phone).
+- `hostname` or `nickname` define the name of the machine. If the machine's hostname is not explicitly controllable (eg. Android phones and ChromeOS devices), this will use `nickname`; otherwise, it will use `hostname`.
+- `machine-id`: The content of [/etc/machine-id](https://www.freedesktop.org/software/systemd/man/machine-id.html) for the system, if present.
+- `distro`: What operating system was loaded onto the machine. Known values (self-explanatory):
+  - `archlinux`
+  - `android`
+  - `raspbian`
+  - `win10`
+- `processor`: What processor architecture the device uses (in practice, either `x64` or `arm`).
+- `chassis`: What the machine's form-factor is, using the same values as the "CHASSIS" parameter of [/etc/machine-info](https://www.freedesktop.org/software/systemd/man/machine-info.html). The "convertible" value is used here to refer to systems that live on removable storage that is passed from device to device (eg. a bootable flash drive).
+- `tags`: An array of keywords that describe other commonalities between systems not expressible within the structure described above. Currently, the only tag in use is "chromebook", denoting a Chromebook that has had its onboard storage overwritten with a pet OS.

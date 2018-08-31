@@ -1,1 +1,4 @@
-tags: [portable, x64, archlinux]
+hostname: sturling
+distro: archlinux
+processor: x64
+chassis: convertible
