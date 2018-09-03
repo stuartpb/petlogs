@@ -1,4 +1,5 @@
 hostname: stushiba
+machine-id: 8b58da9dc97a43b5897f4b232820c391
 distro: archlinux
 processor: x64
 chassis: desktop
