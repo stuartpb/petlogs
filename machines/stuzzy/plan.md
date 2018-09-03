@@ -5,6 +5,11 @@
 - make it so gsudo doesn't prompt me for my password, just like sudo?
   - might need to switch to pkexec: https://unix.stackexchange.com/questions/174214/is-there-a-graphical-sudo-kdesudo-gksudo-su-to-root-tool-that-works-pas/174249
 - upstream touchpad patch in gtk+
+- what is the deal with these ligatures in monospaced text? it's happening in Google Chrome, and it sucks.
+
+## Atom tweaks
+
+- Is there an option to always Reveal in Tree View whenever you switch to a buffer for a file that's within your project? Should this be a package? Is there already one?
 
 ## grand plan
 
