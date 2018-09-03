@@ -1,0 +1,1 @@
+- encrypt root or home directory or whatever makes sense (see 2018-09-02 changelog)
