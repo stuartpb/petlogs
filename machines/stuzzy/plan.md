@@ -1,3 +1,6 @@
+- add the thing so bash completion is case insensitive
+- NodeMCU stuff
+
 ## GNOME issues
 
 - turn off the bell sound when at the end of an input box and hitting the arrow key trying to go past it
@@ -7,6 +10,7 @@
 - upstream touchpad patch in gtk+
 - what is the deal with these ligatures in monospaced text? it's happening in Google Chrome, and it sucks.
 - Someone needs to tell GNOME "Disable until Tomorrow" for a program that goes from sunrise until sunset (Night Light) should use a definition of "tomorrow" that isn't based around 12:00 AM :facepalm:
+- Could have the decency to bring a window I'm trying to drag a file into to the front after a second, like maybe rearrange the windows a little or just make it so it's not too tough to refocus on the original window if you need to drag back to the original (ie. if the whole original window was within the bounding box of the target, move the window to the edge nearest where the cursor entered, off by like half the icon size or whatever), and returning to the original returns focus immediately so you don't end up in the "oh I've made a mess of these" state
 
 ## Atom tweaks
 
@@ -25,7 +29,7 @@ these are tasks that involve more than just stuzzy, but the end goal is to have 
   - remove AUR package for wifi adapter (since I'm cabled again)
   - pacman -Syu
 - [x] reboot into stushiba
-  - [ ] image stuzate drive directly to ateworld (don't gzip)
+  - [x] image stuzate drive directly to ateworld (don't gzip)
     - since I'd like to be able to mount it
     - and compression would only save like 1/32 the drive's capacity
     - and not having to depend on squashfs for anything is worth at *least* that
