@@ -1,0 +1,3 @@
+- Add microcode updates for AMD
+- How hard can I make rEFInd be the default boot option? Can I clobber the default location without breaking Windows boot?
+- the GNOME Screen Keyboard is *hella broken* (should check how it looks on stuzzy)

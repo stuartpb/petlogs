@@ -6,6 +6,7 @@
   - might need to switch to pkexec: https://unix.stackexchange.com/questions/174214/is-there-a-graphical-sudo-kdesudo-gksudo-su-to-root-tool-that-works-pas/174249
 - upstream touchpad patch in gtk+
 - what is the deal with these ligatures in monospaced text? it's happening in Google Chrome, and it sucks.
+- Someone needs to tell GNOME "Disable until Tomorrow" for a program that goes from sunrise until sunset (Night Light) should use a definition of "tomorrow" that isn't based around 12:00 AM :facepalm:
 
 ## Atom tweaks
 
@@ -18,12 +19,12 @@ these are tasks that involve more than just stuzzy, but the end goal is to have 
 - [x] put ateworld back on the desktop
 - [x] move archive from boatoar to ateworld
 - [x] write windows 10 install media to cruzer drive
-- [ ] bootstrap sturling mk iii to c720p's old storage
-- [ ] reboot stutendo into sturling to rescue stushiba
+- [x] bootstrap sturling mk iii to c720p's old storage
+- [x] reboot stutendo into sturling to rescue stushiba
   - arch chroot
   - remove AUR package for wifi adapter (since I'm cabled again)
   - pacman -Syu
-- [ ] reboot into stushiba
+- [x] reboot into stushiba
   - [ ] image stuzate drive directly to ateworld (don't gzip)
     - since I'd like to be able to mount it
     - and compression would only save like 1/32 the drive's capacity
