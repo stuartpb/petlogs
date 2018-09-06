@@ -1,5 +1,6 @@
 - add the thing so bash completion is case insensitive
 - NodeMCU stuff
+- Is there a way to fix the mei_me errors on startup?
 
 ## GNOME issues
 
