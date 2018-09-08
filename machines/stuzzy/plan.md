@@ -1,10 +1,14 @@
+# stuzzy todo
+
 - add the thing so bash completion is case insensitive
-- NodeMCU stuff
 - Is there a way to fix the mei_me errors on startup?
+
+## QEMU
+
+want to look into booting sturling/stuquart via VM
 
 ## GNOME issues
 
-- turn off the bell sound when at the end of an input box and hitting the arrow key trying to go past it
 - change the default color scheme that applies to Terminal to be dark?
 - make it so gsudo doesn't prompt me for my password, just like sudo?
   - might need to switch to pkexec: https://unix.stackexchange.com/questions/174214/is-there-a-graphical-sudo-kdesudo-gksudo-su-to-root-tool-that-works-pas/174249
