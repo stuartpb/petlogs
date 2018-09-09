@@ -1,7 +1,38 @@
 # stuzzy todo
 
-- add the thing so bash completion is case insensitive
-- Is there a way to fix the mei_me errors on startup?
+## fixing kernel errors on startup
+
+`journalctl -kp err` shows two separate issues right now:
+
+### cros_ec_lpcs
+
+`cros_ec_lpcs cros_ec_lpcs.0: EC ID not detected`
+
+Googling the message indicates this is coming from https://github.com/torvalds/linux/blob/master/drivers/platform/chrome/cros_ec_lpc.c#L261
+
+Looking at what this module is by the comment at the top of the file: hey, is that why I've been feeling like this keyboard kinda sucks? I've been assuming it's just because the keys are cheap and wobbly/sticky.
+
+Anyway, this might just be a feature that's never going to work due to the firmware - should I blacklist this module?
+
+### mei_me
+
+```
+mei_me 0000:00:16.0: wait hw ready failed
+mei_me 0000:00:16.0: hw_start failed ret = -62
+mei_me 0000:00:16.0: wait hw ready failed
+mei_me 0000:00:16.0: hw_start failed ret = -62
+mei_me 0000:00:16.0: wait hw ready failed
+mei_me 0000:00:16.0: hw_start failed ret = -62
+mei_me 0000:00:16.0: reset: reached maximal consecutive resets: disabling the device
+mei_me 0000:00:16.0: reset failed ret = -19
+mei_me 0000:00:16.0: link layer initialization failed.
+mei_me 0000:00:16.0: init hw failure.
+mei_me 0000:00:16.0: initialization failed.
+```
+
+https://www.google.com/search?q=%22mei_me+0000+00+16.0+reset+reached+maximal+consecutive+resets+disabling+the+device%22 indicates that this is a sort of weirdly-common (and most likely harmless) issue, with lots of unrelated issues including it in their log output without anyone commenting or noticing.
+
+This is the closest thing I could find to anybody even remotely caring about this error: https://www.spinics.net/lists/linux-8086/msg00845.html
 
 ## QEMU
 
