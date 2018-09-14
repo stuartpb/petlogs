@@ -26,6 +26,10 @@ For this reason, petlogs are always kept on a reliable system *outside of* the o
 
 I originally maintained each of these logs in separate Gists; however, having them all in one repository makes it easier to cross-reference approaches that were used in other systems when taking the same actions on another one, and also makes it easier to keep all the logs, for reference, in the same sort of layout (ie. adding frontmatter to all the logs at once in one commit).
 
+## Style Guide
+
+Present tense is used when things are documented shortly before, after, or during the thing being described: if something isn't being written about within about thirty seconds of when what's being described is happening, it'll generally be described in the past, or future, tense.
+
 ## Metadata format
 
 The `metadata.yaml` files for each machine contain some characteristic information about that system:
