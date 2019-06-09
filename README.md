@@ -1,6 +1,3 @@
-## MERGEME
+# This repository has been retired
 
-There are two nodes here to work into the existing mesh:
-
-- [machine list](content/4f705b65-cc3c-4f66-a256-ae5e5777d276.md)
-- [Original README.md](content/f66caf27-1b92-43ad-89f1-cb796fd15dc7.md)
+The content that was kept in this repository has been moved to [my notes](https://notes.stuartpb.com/content/1c1b77bb-9e37-4d0a-9dd2-5bafbeee15f5.html).
